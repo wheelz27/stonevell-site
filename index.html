@@ -3,7 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stonevell — Your Digital Fortress</title>
+<title>Stonevell — IT Services, Device Repair & AI Automation | Reno, Sparks & Carson City</title>
+<meta name="description" content="Stonevell delivers device repair, cybersecurity, managed IT, web presence, and AI automation for businesses in Reno, Sparks, and Carson City, NV. No contracts. Just results.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Stonevell — Your Digital Fortress">
+<meta property="og:description" content="Device repair, cybersecurity, managed IT, and AI automation for businesses in Reno, Sparks & Carson City. No contracts. Just results.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.stonevell.com">
+<meta property="og:image" content="https://www.stonevell.com/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stonevell — Your Digital Fortress">
+<meta name="twitter:description" content="Device repair, cybersecurity, managed IT, and AI automation for Reno, Sparks & Carson City businesses.">
+
+<!-- Local Business Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Stonevell",
+  "description": "IT services, device repair, cybersecurity, managed IT, web presence, and AI automation for businesses in Reno, Sparks, and Carson City, Nevada.",
+  "url": "https://www.stonevell.com",
+  "telephone": "+17754843804",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Reno",
+    "addressRegion": "NV",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Reno"},
+    {"@type": "City", "name": "Sparks"},
+    {"@type": "City", "name": "Carson City"}
+  ],
+  "serviceType": ["Device Repair", "Cybersecurity", "Managed IT", "Web Design", "AI Automation"],
+  "priceRange": "$$"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -204,6 +243,7 @@ html, body {
   background: var(--gold-light);
 }
 
+/* ── SERVICES ── */
 .services {
   position: relative;
   z-index: 10;
@@ -282,6 +322,141 @@ html, body {
   color: var(--text-secondary);
 }
 
+/* ── VALHALLA PROMO BAND ── */
+.valhalla-band {
+  padding: 70px 40px;
+  background: rgba(201,168,76,0.03);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  text-align: center;
+}
+.valhalla-band-eyebrow {
+  font-family: 'Raleway', sans-serif; font-weight: 500;
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+.valhalla-band-title {
+  font-family: 'Cinzel', serif; font-weight: 700;
+  font-size: clamp(22px, 3.5vw, 36px); color: var(--text-primary);
+  margin-bottom: 14px;
+}
+.valhalla-band-desc {
+  font-family: 'Raleway', sans-serif; font-weight: 300;
+  font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+  max-width: 500px; margin: 0 auto 28px;
+}
+.valhalla-band a {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Raleway', sans-serif; font-weight: 500;
+  font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--gold); text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  padding-bottom: 3px;
+  transition: all 0.3s;
+}
+.valhalla-band a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+/* ── TESTIMONIALS ── */
+.testimonials {
+  padding: 100px 40px;
+  background: var(--dark);
+}
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.testimonials-label {
+  font-family: 'Raleway', sans-serif; font-weight: 500;
+  font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+.testimonials-title {
+  font-family: 'Cinzel', serif; font-weight: 600;
+  font-size: clamp(22px, 3.5vw, 34px); color: var(--text-primary);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 32px 28px;
+  transition: border-color 0.3s;
+}
+.testimonial-card:hover {
+  border-color: rgba(201,168,76,0.2);
+}
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.testimonial-quote {
+  font-family: 'Raleway', sans-serif; font-weight: 300;
+  font-size: 14px; line-height: 1.8; color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex; align-items: center; gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cinzel', serif; font-weight: 600;
+  font-size: 14px; color: var(--gold);
+  flex-shrink: 0;
+}
+.testimonial-name {
+  font-family: 'Raleway', sans-serif; font-weight: 500;
+  font-size: 13px; color: var(--text-primary);
+}
+.testimonial-role {
+  font-family: 'Raleway', sans-serif; font-weight: 300;
+  font-size: 12px; color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── SERVICE AREAS ── */
+.areas-section {
+  padding: 70px 40px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+.areas-label {
+  font-family: 'Raleway', sans-serif; font-weight: 500;
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+.areas-title {
+  font-family: 'Cinzel', serif; font-weight: 600;
+  font-size: clamp(20px, 3vw, 30px); color: var(--text-primary);
+  margin-bottom: 32px;
+}
+.areas-grid {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;
+  max-width: 700px; margin: 0 auto;
+}
+.area-pill {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 50px;
+  font-family: 'Raleway', sans-serif; font-weight: 400;
+  font-size: 13px; color: var(--text-secondary);
+}
+.area-pill::before { content: '◆'; font-size: 6px; color: var(--gold); }
+
+/* ── FOOTER ── */
 .footer {
   padding: 40px;
   text-align: center;
@@ -301,6 +476,9 @@ html, body {
   .nav { padding: 16px 20px; }
   .hero-content { padding: 0 20px 60px; }
   .services { padding: 60px 20px; }
+  .valhalla-band { padding: 50px 20px; }
+  .testimonials { padding: 60px 20px; }
+  .areas-section { padding: 50px 20px; }
   .hero-actions { flex-direction: column; }
   .btn { justify-content: center; }
 }
@@ -338,14 +516,15 @@ html, body {
   <div class="hero-content">
     <h1 class="hero-title">Your Digital<br>Fortress</h1>
     <p class="hero-powered">Powered by <span>Valhalla</span></p>
-    <p class="hero-desc">Device repair that gets you back in the fight. Online presence that puts your business on the map. No contracts. No runaround. Just results.</p>
+    <p class="hero-desc">Device repair, cybersecurity, and AI automation for businesses in Reno, Sparks, and Carson City. No contracts. No runaround. Just results.</p>
     <div class="hero-actions">
       <a href="#services" class="btn btn-outline">Explore Services &rarr;</a>
-      <a href="tel:7754843804" class="btn btn-solid">Schedule Consultation</a>
+      <a href="contact.html" class="btn btn-solid">Get In Touch</a>
     </div>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="services-header">
     <p class="services-label">What We Build</p>
@@ -357,14 +536,14 @@ html, body {
         <svg width="22" height="22" fill="none" stroke="#c9a84c" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
       </div>
       <h3>Device Repair</h3>
-      <p>Fast, reliable diagnostics and repair for laptops, desktops, and mobile devices. Get back in the fight.</p>
+      <p>Fast, reliable diagnostics and repair for laptops, desktops, and mobile devices. Same-day service across Reno, Sparks & Carson City.</p>
     </a>
     <a href="web-presence.html" class="service-card" style="text-decoration:none;color:inherit;display:block;">
       <div class="service-icon">
         <svg width="22" height="22" fill="none" stroke="#c9a84c" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       </div>
       <h3>Web Presence</h3>
-      <p>Websites, landing pages, and digital storefronts that put your business on the map and generate leads.</p>
+      <p>Websites, landing pages, and digital storefronts that put your business on the map and generate leads in Northern Nevada.</p>
     </a>
     <a href="cybersecurity.html" class="service-card" style="text-decoration:none;color:inherit;display:block;">
       <div class="service-icon">
@@ -385,20 +564,77 @@ html, body {
         <svg width="22" height="22" fill="none" stroke="#c9a84c" stroke-width="1.5" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
       </div>
       <h3>AI Automation</h3>
-      <p>Custom automation systems that eliminate busywork, capture leads, and scale your operations.</p>
-    </a>
-    <a href="business-efficiency-engine.html" class="service-card" style="text-decoration:none;color:inherit;display:block;border-color:rgba(201,168,76,0.2);">
-      <div class="service-icon">
-        <svg width="22" height="22" fill="none" stroke="#c9a84c" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
-      <h3>Efficiency Engine</h3>
-      <p>A done-for-you operational overhaul. Audit, automate, and eliminate waste — systems that run without you.</p>
+      <p>Custom automation systems that eliminate busywork, capture leads, and scale your operations — powered by The Valhalla System.</p>
     </a>
   </div>
 </section>
 
+<!-- VALHALLA PROMO BAND -->
+<section class="valhalla-band">
+  <p class="valhalla-band-eyebrow">Proprietary Framework</p>
+  <h2 class="valhalla-band-title">Powered by The Valhalla System</h2>
+  <p class="valhalla-band-desc">Our core automation architecture — built to capture every lead, eliminate manual bottlenecks, and scale your operation without hiring. Used across every engagement we run.</p>
+  <a href="valhalla.html">Learn How It Works &rarr;</a>
+</section>
+
+<!-- TESTIMONIALS -->
+<!-- ★ REPLACE THESE with your real Google reviews / client feedback ★ -->
+<section class="testimonials">
+  <div class="testimonials-header">
+    <p class="testimonials-label">Client Results</p>
+    <h2 class="testimonials-title">What People Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"My laptop was dead the morning before a big presentation. Mike had it diagnosed and running within two hours. Didn't try to upsell me on anything I didn't need. Just fixed it."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">JR</div>
+        <div>
+          <div class="testimonial-name">James R.</div>
+          <div class="testimonial-role">Small Business Owner &middot; Reno, NV</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"We were manually tracking intake on spreadsheets and losing leads constantly. Stonevell built an automated system that routes everything automatically. Wish we'd done it two years ago."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">ST</div>
+        <div>
+          <div class="testimonial-name">Sarah T.</div>
+          <div class="testimonial-role">Operations Director &middot; Sparks, NV</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Fast, honest, and no tech jargon. I didn't feel like I was getting taken advantage of. They explained exactly what was wrong and gave me a straight price. Will use again."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">DM</div>
+        <div>
+          <div class="testimonial-name">Dana M.</div>
+          <div class="testimonial-role">Carson City, NV</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="areas-section">
+  <p class="areas-label">Where We Operate</p>
+  <h2 class="areas-title">Serving Northern Nevada</h2>
+  <div class="areas-grid">
+    <div class="area-pill">Reno, NV</div>
+    <div class="area-pill">Sparks, NV</div>
+    <div class="area-pill">Carson City, NV</div>
+    <div class="area-pill">Remote / Northern Nevada</div>
+  </div>
+</section>
+
 <footer class="footer">
-  <p class="footer-text">&copy; 2026 Stonevell &middot; Northern Nevada &middot; <a href="tel:7754843804">775-484-3804</a></p>
+  <p class="footer-text">&copy; 2026 Stonevell &middot; Reno, Sparks &amp; Carson City &middot; <a href="tel:7754843804">775-484-3804</a> &middot; <a href="contact.html">Contact</a></p>
 </footer>
 
 </body>
