@@ -1,8 +1,7 @@
-# API Rules
+# Contact & Forms Rules
 
-- All API routes live in `app/api/`
-- Validate all request inputs at the route boundary — never trust client data
-- Return consistent error shapes: `{ error: string, code: string }`
-- Use HTTP status codes correctly (200, 201, 400, 401, 403, 404, 500)
-- Authenticate every protected route using Supabase session
-- Never log sensitive data (passwords, tokens, PII)
+- No server-side API — this is a fully static site
+- Contact forms should use a third-party service (e.g. Formspree, Netlify Forms) if needed
+- Phone number displayed on all pages: (775) 484-3804
+- Never hardcode sensitive business info beyond what is already public on the site
+- Any external links should open in a new tab with `target="_blank" rel="noopener noreferrer"`

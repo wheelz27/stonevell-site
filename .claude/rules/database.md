@@ -1,8 +1,12 @@
-# Database Rules
+# Data & SEO Rules
 
-- All database access goes through Supabase client in `lib/supabase.ts`
-- Never expose service role key to the client — server-side only
-- Use Row Level Security (RLS) on all tables
-- Write migrations for every schema change — no manual edits in the dashboard
-- Always add indexes for foreign keys and frequently queried columns
-- Use transactions for multi-step writes
+- Every page must include a Local Business JSON-LD schema block in `<head>`
+- Keep business info consistent across all pages:
+  - Name: Stonevell
+  - Phone: +17754843804
+  - Area served: Reno, Sparks, Carson City, NV
+  - URL: https://www.stonevell.com
+- Open Graph and Twitter Card meta tags required on every page
+- Page titles follow the pattern: `[Page Topic] | Stonevell`
+- Meta descriptions must be unique per page and under 160 characters
+- No user data is collected or stored on this site — no backend, no database

@@ -1,9 +1,11 @@
 # Frontend Rules
 
-- Use TypeScript strict mode — never use `any`
-- Functional components only, no class components
-- Co-locate component styles with the component file
-- Use shadcn/ui primitives before building custom UI
-- Global state lives in Zustand stores (`stores/`)
-- Server components by default; add `"use client"` only when needed
-- All images must have `alt` text
+- No frameworks, no npm, no build step — pure HTML/CSS/JS only
+- All styles go in `<style>` blocks inside the HTML file they belong to
+- All JavaScript goes in `<script>` blocks inside the HTML file
+- No external JS libraries — vanilla JS only
+- Mobile-first responsive design using CSS media queries
+- Every page must work when opened directly as a file in a browser
+- Keep fonts consistent: Cinzel for headings, Raleway for body text
+- Maintain the dark/premium aesthetic consistent with the existing design
+- Every image must have descriptive `alt` text for accessibility
