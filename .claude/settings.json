@@ -1,0 +1,7 @@
+{
+  "model": "sonnet",
+  "hooks": {
+    "pre-commit": ".claude/hooks/pre-commit.sh",
+    "on-save": ".claude/hooks/lint-on-save.sh"
+  }
+}
