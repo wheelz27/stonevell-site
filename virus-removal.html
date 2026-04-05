@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virus &amp; Malware Removal Reno — Stonevell | Reno, Sparks &amp; Carson City</title>
+<meta name="description" content="Professional virus and malware removal in Reno, Sparks, and Carson City. Stonevell removes infections, cleans your system, and hardens your defenses. Remote and in-person.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --gold-dim: #8a7234;
+  --dark: #0a0a0a;
+  --text-primary: #f0ece4;
+  --text-secondary: #b0a99d;
+  --text-muted: #7a746a;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+  background: var(--dark);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* ── NAV — exact match ── */
+.nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-brand a { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.nav-logo {
+  width: 36px; height: 36px;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-logo svg { width: 20px; height: 20px; fill: var(--gold); }
+.nav-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600; font-size: 16px;
+  letter-spacing: 2px; color: var(--text-primary);
+}
+.nav-sep { color: var(--gold); margin: 0 6px; font-size: 8px; }
+.nav-sub {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500; font-size: 11px;
+  letter-spacing: 3px; color: var(--gold); text-transform: uppercase;
+}
+.nav-menu {
+  font-size: 24px; color: var(--text-primary);
+  cursor: pointer; background: none; border: none;
+}
+
+/* ── HERO — same treatment as homepage ── */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5,5,8,0.80) 0%,
+    rgba(5,5,8,0.50) 30%,
+    rgba(5,5,8,0.50) 55%,
+    rgba(5,5,8,0.80) 80%,
+    rgba(5,5,8,1) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px 80px;
+  max-width: 700px;
+}
+
+.hero-back {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  margin-bottom: 32px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+.hero-back:hover { color: var(--gold-light); }
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.6);
+}
+
+.hero-tagline {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+.hero-tagline span { color: var(--gold); font-weight: 600; }
+
+.hero-desc {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ── BUTTONS — exact match ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--text-muted);
+  color: var(--text-primary);
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-solid {
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--dark);
+  font-weight: 600;
+}
+.btn-solid:hover {
+  background: var(--gold-light);
+}
+
+/* ── FEATURES — same card style as homepage services ── */
+.features-section {
+  padding: 80px 40px;
+  background: var(--dark);
+}
+
+.features-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.features-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: clamp(24px, 4vw, 38px);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 32px 28px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: cardIn 0.5s ease forwards;
+}
+
+.feature-card:hover {
+  border-color: var(--gold-dim);
+  background: rgba(201, 168, 76, 0.04);
+  transform: translateY(-4px);
+}
+
+.feature-card h3 {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── PRICING ── */
+.pricing-section {
+  padding: 80px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.pricing-box {
+  max-width: 480px;
+  margin: 0 auto;
+  background: rgba(201, 168, 76, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 10px;
+  padding: 48px 40px;
+}
+
+.pricing-box h3 {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.pricing-price {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.pricing-note {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ── CTA ── */
+.cta-section {
+  padding: 100px 40px;
+  text-align: center;
+  position: relative;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: clamp(24px, 4vw, 38px);
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.cta-desc {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+  position: relative;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ── FOOTER — exact match ── */
+.footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-text {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.footer-text a { color: var(--gold-dim); text-decoration: none; }
+
+/* ── ANIMATIONS ── */
+.hero-title { animation: fadeUp 0.8s ease both; }
+.hero-tagline { animation: fadeUp 0.8s ease 0.15s both; }
+.hero-desc { animation: fadeUp 0.8s ease 0.3s both; }
+.hero-actions { animation: fadeUp 0.8s ease 0.45s both; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .nav { padding: 16px 20px; }
+  .hero-content { padding: 0 20px 60px; }
+  .features-section, .pricing-section { padding: 60px 20px; }
+  .cta-section { padding: 60px 20px; }
+  .hero-actions, .cta-actions { flex-direction: column; }
+  .btn { justify-content: center; }
+}
+</style>
+.cross-links { padding: 60px 40px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; }
+.cross-links h3 { font-family: 'Cinzel', serif; font-weight: 600; font-size: 20px; color: var(--text-primary); margin-bottom: 24px; }
+.cross-links-grid { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+.cross-link { font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; padding: 10px 20px; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; transition: all 0.3s; }
+.cross-link:hover { border-color: var(--gold); color: var(--gold); }
+@media (max-width: 600px) { .cross-links { padding: 40px 20px; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <nav class="nav">
+    <div class="nav-brand">
+      <a href="/">
+        <div class="nav-logo">
+          <svg viewBox="0 0 24 24"><path d="M12 2L8 6H4v4l-2 2 2 2v4h4l4 4 4-4h4v-4l2-2-2-2V6h-4L12 2zm0 4l2 2h3v3l2 1-2 1v3h-3l-2 2-2-2H7v-3L5 12l2-1V8h3l2-2z"/></svg>
+        </div>
+        <div>
+          <span class="nav-title">Stonevell</span>
+          <span class="nav-sep">&#9670;</span>
+          <span class="nav-sub">Northern Nevada</span>
+        </div>
+      </a>
+    </div>
+    <button class="nav-menu">&#9776;</button>
+  </nav>
+  <div class="hero-content">
+    <a href="/" class="hero-back">&larr; Back to Stonevell</a>
+    <h1 class="hero-title">Virus &amp; Malware Removal</h1>
+    <p class="hero-tagline"><span>Clean. Harden. Protect.</span></p>
+    <p class="hero-desc">We remove viruses, spyware, adware, ransomware, and other malware from your PC or Mac. Then we lock it down so it stays clean.</p>
+    <div class="hero-actions">
+      <a href="tel:7754843804" class="btn btn-solid">Call 775-484-3804</a>
+      <a href="sms:7754843804?body=Hi, I need help removing a virus" class="btn btn-outline">Text Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <p class="features-label">What We Do</p>
+  <h2 class="features-title">Virus &amp; Malware Removal</h2>
+  <div class="features-grid">
+      <div class="feature-card" style="animation-delay:0.0s">
+        <h3>Full System Scan</h3>
+        <p>Deep scan with professional-grade tools to find every trace of malware, rootkits, and potentially unwanted programs.</p>
+      </div>
+      <div class="feature-card" style="animation-delay:0.08s">
+        <h3>Infection Removal</h3>
+        <p>Quarantine and remove viruses, trojans, spyware, adware, browser hijackers, and ransomware.</p>
+      </div>
+      <div class="feature-card" style="animation-delay:0.16s">
+        <h3>Browser Cleanup</h3>
+        <p>Remove malicious extensions, reset hijacked settings, clear tracking cookies and redirect chains.</p>
+      </div>
+      <div class="feature-card" style="animation-delay:0.24s">
+        <h3>System Hardening</h3>
+        <p>Update your OS, patch vulnerabilities, configure Windows Defender or install proper antivirus protection.</p>
+      </div>
+      <div class="feature-card" style="animation-delay:0.32s">
+        <h3>Startup Cleanup</h3>
+        <p>Remove malware from startup programs so infections do not survive a reboot.</p>
+      </div>
+      <div class="feature-card" style="animation-delay:0.4s">
+        <h3>Prevention Advice</h3>
+        <p>We show you what caused the infection and how to avoid it next time. No upsell, just practical guidance.</p>
+      </div>
+  </div>
+</section>
+
+<section class="pricing-section">
+  <div class="pricing-box">
+    <h3>Pricing</h3>
+    <div class="pricing-price">$50 – $150</div>
+    <p class="pricing-note">Most infections resolved in a single session. No fix, no charge.</p>
+    <a href="tel:7754843804" class="btn btn-solid">Call 775-484-3804</a>
+  </div>
+</section>
+
+<section class="cross-links">
+  <h3>Other Services</h3>
+  <div class="cross-links-grid">
+    <a href="slow-computer.html" class="cross-link">Slow Computer</a>
+    <a href="pc-repair.html" class="cross-link">PC Repair</a>
+    <a href="mac-support.html" class="cross-link">Mac Support</a>
+    <a href="remote-support.html" class="cross-link">Remote Support</a>
+    <a href="data-recovery.html" class="cross-link">Data Recovery</a>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 class="cta-title">Ready to get started?</h2>
+  <p class="cta-desc">Call us, text us, or request remote support. We get back to everyone within 24 hours.</p>
+  <div class="cta-actions">
+    <a href="tel:7754843804" class="btn btn-solid">Call 775-484-3804</a>
+    <a href="remote-support.html#intake-form" class="btn btn-outline">Start Remote Session</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer-text">&copy; 2026 Stonevell &middot; Reno, Sparks &amp; Carson City &middot; <a href="tel:7754843804">775-484-3804</a> &middot; <a href="privacy-policy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
