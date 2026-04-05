@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Stonevell Valhalla</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0a0a0f;color:#e0e0e0;min-height:100vh}
+.header{background:#13131a;border-bottom:1px solid #2a2a3a;padding:20px 32px;display:flex;align-items:center;justify-content:space-between}
+.header h1{font-size:1.1rem;font-weight:700;letter-spacing:2px;color:#6366f1}
+.header span{font-size:.8rem;color:#6b7280}
+.container{max-width:1100px;margin:0 auto;padding:32px 24px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:32px}
+.stat{background:#13131a;border:1px solid #2a2a3a;border-radius:12px;padding:20px;text-align:center}
+.stat .num{font-size:2rem;font-weight:700;color:#6366f1}
+.stat .lbl{font-size:.75rem;color:#6b7280;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+table{width:100%;border-collapse:collapse;background:#13131a;border-radius:12px;overflow:hidden;border:1px solid #2a2a3a}
+th{background:#1c1c2a;padding:12px 16px;text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:#6b7280}
+td{padding:12px 16px;border-bottom:1px solid #1c1c2a;font-size:.875rem;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(99,102,241,.04)}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:600;letter-spacing:.5px}
+.badge-hot{background:rgba(239,68,68,.15);color:#f87171}
+.badge-warm{background:rgba(251,146,60,.15);color:#fb923c}
+.badge-cold{background:rgba(99,102,241,.15);color:#818cf8}
+.badge-rejected{background:rgba(107,114,128,.15);color:#9ca3af}
+.empty{text-align:center;padding:60px;color:#4b5563}
+#login{position:fixed;inset:0;background:#0a0a0f;display:flex;align-items:center;justify-content:center;z-index:100}
+.login-card{background:#13131a;border:1px solid #2a2a3a;border-radius:16px;padding:40px;width:320px;text-align:center}
+.login-card h2{margin-bottom:24px;font-size:1.1rem;letter-spacing:2px;color:#6366f1}
+.login-card input{width:100%;background:#0f0f18;border:1px solid #2a2a3a;border-radius:8px;padding:12px;color:#e0e0e0;font-size:.95rem;margin-bottom:12px;outline:none}
+.login-card button{width:100%;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:600;cursor:pointer;font-size:.95rem}
+.login-card .err{color:#f87171;font-size:.8rem;margin-top:8px}
+</style>
+</head>
+<body>
+
+<div id="login">
+  <div class="login-card">
+    <h2>VALHALLA ADMIN</h2>
+    <input type="password" id="pw" placeholder="Password" onkeydown="if(event.key==='Enter')auth()">
+    <button onclick="auth()">Enter</button>
+    <p class="err" id="err"></p>
+  </div>
+</div>
+
+<div id="app" style="display:none">
+  <div class="header">
+    <h1>⚡ VALHALLA DASHBOARD</h1>
+    <span id="last-updated"></span>
+  </div>
+  <div class="container">
+    <div class="stats" id="stats"></div>
+    <table id="leads-table">
+      <thead>
+        <tr>
+          <th>#</th><th>Name</th><th>Email</th><th>Phone</th>
+          <th>Service</th><th>Score</th><th>Priority</th><th>Received</th>
+        </tr>
+      </thead>
+      <tbody id="leads-body">
+        <tr><td colspan="8" class="empty">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const API = 'https://web-production-610fc.up.railway.app';
+const PASS = 'stonevell2024';
+
+function auth() {
+  const pw = document.getElementById('pw').value;
+  if (pw === PASS) {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    loadLeads();
+    setInterval(loadLeads, 30000);
+  } else {
+    document.getElementById('err').textContent = 'Wrong password';
+  }
+}
+
+async function loadLeads() {
+  try {
+    const res   = await fetch(`${API}/leads`);
+    const leads = await res.json();
+    renderStats(leads);
+    renderTable(leads);
+    document.getElementById('last-updated').textContent = 'Updated ' + new Date().toLocaleTimeString();
+  } catch(e) {
+    document.getElementById('leads-body').innerHTML = `<tr><td colspan="8" class="empty">Could not connect to Valhalla — ${e.message}</td></tr>`;
+  }
+}
+
+function renderStats(leads) {
+  const hot  = leads.filter(l => l.priority === 'hot').length;
+  const warm = leads.filter(l => l.priority === 'warm').length;
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><div class="num">${leads.length}</div><div class="lbl">Total Leads</div></div>
+    <div class="stat"><div class="num" style="color:#f87171">${hot}</div><div class="lbl">Hot 🔥</div></div>
+    <div class="stat"><div class="num" style="color:#fb923c">${warm}</div><div class="lbl">Warm</div></div>
+    <div class="stat"><div class="num" style="color:#22c55e">${leads.filter(l=>l.score>=70).length}</div><div class="lbl">High Score</div></div>
+  `;
+}
+
+function renderTable(leads) {
+  if (!leads.length) {
+    document.getElementById('leads-body').innerHTML = '<tr><td colspan="8" class="empty">No leads yet. Share that contact form!</td></tr>';
+    return;
+  }
+  const sorted = [...leads].reverse();
+  document.getElementById('leads-body').innerHTML = sorted.map((l, i) => `
+    <tr>
+      <td style="color:#4b5563">${sorted.length - i}</td>
+      <td><strong>${esc(l.name || '—')}</strong></td>
+      <td><a href="mailto:${esc(l.email)}" style="color:#6366f1">${esc(l.email || '—')}</a></td>
+      <td>${esc(l.phone || '—')}</td>
+      <td>${esc(l.service || '—')}</td>
+      <td>${l.score ?? '—'}</td>
+      <td><span class="badge badge-${l.priority || 'cold'}">${(l.priority || 'cold').toUpperCase()}</span></td>
+      <td style="color:#6b7280;font-size:.75rem">${l.received_at ? new Date(l.received_at).toLocaleString() : '—'}</td>
+    </tr>
+  `).join('');
+}
+
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+</script>
+</body>
+</html>

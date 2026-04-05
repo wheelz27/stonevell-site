@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  width: 400px; height: 400px;
+  background: #0a0a0a;
+  display: flex; align-items: center; justify-content: center;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.shield {
+  width: 160px; height: 160px;
+  border: 3px solid #c9a84c;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.shield svg { width: 88px; height: 88px; }
+.name {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: #c9a84c;
+  text-transform: uppercase;
+}
+.sub {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #8a7234;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="shield">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z"/>
+    </svg>
+  </div>
+  <div class="name">Stonevell</div>
+  <div class="sub">Northern Nevada</div>
+</div>
+</body>
+</html>
