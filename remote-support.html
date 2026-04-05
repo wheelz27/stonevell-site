@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remote Computer Support | Stonevell – Your Digital Fortress</title>
+<meta name="description" content="Stonevell remote computer repair and tech support for Reno, Sparks, Carson City and beyond. Virus cleanup, troubleshooting, optimization — all done remotely.">
+<meta name="keywords" content="remote computer repair Reno, online tech support Sparks NV, remote tech support, computer repair Reno, laptop repair Reno, PC repair Sparks, managed IT Reno, cybersecurity Reno">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --bg-card-hover: #161616;
+    --gold: #c9a84c;
+    --gold-dim: #a88a3a;
+    --gold-glow: rgba(201, 168, 76, 0.15);
+    --gold-glow-strong: rgba(201, 168, 76, 0.3);
+    --text: #e8e8e8;
+    --text-dim: #999999;
+    --text-muted: #666666;
+    --border: #222222;
+    --border-gold: rgba(201, 168, 76, 0.3);
+    --danger: #cc4444;
+    --success: #44cc66;
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Raleway', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === SUBTLE BACKGROUND TEXTURE === */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 0%, rgba(201,168,76,0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(201,168,76,0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* === LAYOUT === */
+  .page-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* === NAV BAR (minimal) === */
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .nav-back {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--gold); }
+
+  /* === HERO === */
+  .hero {
+    padding: 80px 0 50px;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-glow);
+    border: 1px solid var(--border-gold);
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    max-width: 680px;
+    margin: 0 auto 36px;
+    line-height: 1.8;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* === BUTTONS === */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: #0a0a0a;
+  }
+  .btn-primary:hover {
+    background: #d4b55a;
+    box-shadow: 0 0 30px var(--gold-glow-strong);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--border-gold);
+  }
+  .btn-outline:hover {
+    background: var(--gold-glow);
+    border-color: var(--gold);
+  }
+  .btn-sm {
+    padding: 10px 22px;
+    font-size: 0.78rem;
+  }
+
+  /* === SECTIONS === */
+  section {
+    padding: 60px 0;
+  }
+  .section-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold-dim);
+    margin: 0 auto 60px;
+    opacity: 0.5;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+
+  /* === SERVICES GRID === */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 0;
+  }
+  .service-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 22px 24px;
+    transition: border-color 0.25s, background 0.25s;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .service-item:hover {
+    border-color: var(--border-gold);
+    background: var(--bg-card-hover);
+  }
+  .service-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1.1rem;
+    background: var(--gold-glow);
+    border-radius: 2px;
+  }
+  .service-item h4 {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .service-item p {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* === HOW IT WORKS === */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+    padding: 24px 0;
+  }
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 60px;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--gold);
+    border: 1px solid var(--border-gold);
+    border-radius: 50%;
+    background: var(--bg);
+    position: relative;
+    z-index: 1;
+  }
+  .step h4 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .step p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* === INTAKE FORM === */
+  .form-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 48px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group.full-width {
+    grid-column: 1 / -1;
+  }
+  .form-group label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .form-group label .req {
+    color: var(--gold);
+    margin-left: 2px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 12px 14px;
+    transition: border-color 0.2s;
+    outline: none;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold-dim);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--text-muted);
+  }
+  .form-group select option {
+    background: var(--bg);
+    color: var(--text);
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  .form-group input.error,
+  .form-group select.error,
+  .form-group textarea.error {
+    border-color: var(--danger);
+  }
+  .field-error {
+    font-size: 0.75rem;
+    color: var(--danger);
+    margin-top: 4px;
+    min-height: 18px;
+  }
+
+  /* Consent checkbox */
+  .consent-group {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+  }
+  .consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .consent-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .consent-label input[type="checkbox"]:checked {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .consent-label input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0a0a0a;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .consent-label input[type="checkbox"].error {
+    border-color: var(--danger);
+  }
+
+  /* Form messages */
+  .form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .form-status {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+  .form-status.success { color: var(--success); }
+  .form-status.error { color: var(--danger); }
+
+  /* === LEGAL / LIABILITY === */
+  .legal-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  .legal-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .legal-section p {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .legal-section ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 14px;
+  }
+  .legal-section ul li {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    padding-left: 18px;
+    position: relative;
+  }
+  .legal-section ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold-dim);
+  }
+
+  /* === QUICK ASSIST FALLBACK === */
+  .fallback-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 32px 36px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .fallback-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .fallback-card h3 .win-icon {
+    color: var(--gold);
+    font-size: 1rem;
+  }
+  .fallback-card p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  /* === FOOTER === */
+  .page-footer {
+    text-align: center;
+    padding: 48px 0 32px;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+  .page-footer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .page-footer a {
+    color: var(--gold-dim);
+    text-decoration: none;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 640px) {
+    .hero { padding: 50px 0 30px; }
+    .form-section { padding: 32px 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .hero-cta-row { flex-direction: column; align-items: center; }
+    .btn { width: 100%; justify-content: center; }
+    .services-grid { grid-template-columns: 1fr; }
+    .fallback-card { padding: 24px 20px; }
+  }
+
+  /* === ANIMATIONS === */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+  }
+  .animate-in:nth-child(1) { animation-delay: 0.1s; }
+  .animate-in:nth-child(2) { animation-delay: 0.2s; }
+  .animate-in:nth-child(3) { animation-delay: 0.3s; }
+
+  /* Loading spinner for button */
+  .btn-loading {
+    position: relative;
+    pointer-events: none;
+    color: transparent !important;
+  }
+  .btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid transparent;
+    border-top-color: #0a0a0a;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- NAV -->
+  <nav class="nav-bar">
+    <a href="/" class="nav-logo">Stonevell</a>
+    <a href="/" class="nav-back">← Back to Home</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero animate-in">
+    <div class="hero-badge">Remote Support</div>
+    <h1>Remote Computer Repair<br><span>From Anywhere</span></h1>
+    <p>If your computer can get online, we can fix it. Stonevell diagnoses, troubleshoots, cleans up, optimizes, and repairs your device remotely through secure screen-sharing — with your permission, every step of the way.</p>
+    <div class="hero-cta-row">
+      <a href="#intake-form" class="btn btn-primary">Start Remote Session</a>
+      <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- WHAT WE CAN HELP WITH -->
+  <section>
+    <h2 class="section-title">What We Can Help With</h2>
+    <p class="section-subtitle">Most common computer problems can be solved remotely. Here's what we handle.</p>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">⚡</div>
+        <div>
+          <h4>Slow Computer</h4>
+          <p>Diagnose bottlenecks, clean up startup, optimize performance.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🛡</div>
+        <div>
+          <h4>Virus &amp; Malware Cleanup</h4>
+          <p>Scan, quarantine, and remove infections. Harden your system.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">⚙</div>
+        <div>
+          <h4>Software Errors &amp; Crashes</h4>
+          <p>Fix application failures, blue screens, and system errors.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🖨</div>
+        <div>
+          <h4>Printer &amp; Email Setup</h4>
+          <p>Configure printers, email clients, accounts, and sync.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🪟</div>
+        <div>
+          <h4>Windows &amp; Mac Optimization</h4>
+          <p>Updates, driver fixes, disk cleanup, registry repair.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🌐</div>
+        <div>
+          <h4>Browser &amp; Connectivity</h4>
+          <p>Fix browser issues, extensions, DNS, network settings.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📦</div>
+        <div>
+          <h4>App Installs &amp; Updates</h4>
+          <p>Install, configure, update, or migrate applications.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">💾</div>
+        <div>
+          <h4>File Transfer &amp; Backup</h4>
+          <p>Move files, set up basic backups, recover access.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🔄</div>
+        <div>
+          <h4>Startup Issues</h4>
+          <p>Fix boot problems, startup loops, and loading errors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">Five steps. No trips. No waiting rooms.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h4>Request Remote Support</h4>
+          <p>Fill out the intake form below with your name, device info, and a short description of the problem.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h4>We Review &amp; Respond</h4>
+          <p>We confirm your request and send you a secure connection link via email or text.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h4>Click the Secure Link</h4>
+          <p>Open the link on your computer. It launches a lightweight client — no install required in most cases.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h4>Approve Access</h4>
+          <p>You grant permission for us to view and control your screen. You can see everything we do.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <h4>We Fix It</h4>
+          <p>We diagnose and resolve the issue while you watch or stay available. Session ends when we're done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- INTAKE FORM -->
+  <section id="intake-form">
+    <h2 class="section-title">Request Remote Support</h2>
+    <p class="section-subtitle">Fill out the form to get started. We'll reach out to schedule your session.</p>
+
+    <div class="form-section">
+      <form id="supportForm" novalidate>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+            <div class="field-error" id="fullName-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required>
+            <div class="field-error" id="email-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
+            <div class="field-error" id="phone-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City / State</label>
+            <input type="text" id="city" name="city" placeholder="Reno, NV">
+          </div>
+
+          <div class="form-group">
+            <label for="deviceType">Device Type <span class="req">*</span></label>
+            <select id="deviceType" name="deviceType" required>
+              <option value="" disabled selected>Select device</option>
+              <option value="Desktop PC">Desktop PC</option>
+              <option value="Laptop">Laptop</option>
+              <option value="All-in-One">All-in-One</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="field-error" id="deviceType-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="os">Operating System <span class="req">*</span></label>
+            <select id="os" name="os" required>
+              <option value="" disabled selected>Select OS</option>
+              <option value="Windows 11">Windows 11</option>
+              <option value="Windows 10">Windows 10</option>
+              <option value="Windows (older)">Windows (older)</option>
+              <option value="macOS">macOS</option>
+              <option value="Linux">Linux</option>
+              <option value="Not sure">Not sure</option>
+            </select>
+            <div class="field-error" id="os-error"></div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="issue">Describe the Problem <span class="req">*</span></label>
+            <textarea id="issue" name="issue" placeholder="What's going on with your computer? Be as specific as you can — error messages, when it started, what you've tried." required></textarea>
+            <div class="field-error" id="issue-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="urgency">Urgency</label>
+            <select id="urgency" name="urgency">
+              <option value="Normal" selected>Normal</option>
+              <option value="Urgent">Urgent — I need help ASAP</option>
+              <option value="Flexible">Flexible — no rush</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="bestTime">Best Time to Connect</label>
+            <select id="bestTime" name="bestTime">
+              <option value="Morning">Morning (8am–12pm)</option>
+              <option value="Afternoon" selected>Afternoon (12pm–5pm)</option>
+              <option value="Evening">Evening (5pm–8pm)</option>
+              <option value="Anytime">Anytime</option>
+            </select>
+          </div>
+
+          <!-- CONSENT -->
+          <div class="consent-group">
+            <label class="consent-label">
+              <input type="checkbox" id="consent" name="consent" required>
+              <span>I authorize Stonevell to remotely connect to my device for the purpose of technical support. I understand that I can revoke access and end the session at any time. I acknowledge that Stonevell is not responsible for pre-existing hardware conditions, data loss from causes outside the scope of this session, or issues unrelated to the agreed support scope.</span>
+            </label>
+            <div class="field-error" id="consent-error"></div>
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">Submit Request</button>
+            <span class="form-status" id="formStatus"></span>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- LIABILITY / TERMS -->
+  <section>
+    <div class="legal-section">
+      <h3>Remote Support Terms &amp; Liability Disclaimer</h3>
+
+      <p><strong>Consent &amp; Authorization.</strong> By submitting a remote support request and approving the session connection, you authorize Stonevell to access your device's screen and controls solely for the purpose of diagnosing and resolving the technical issue described in your intake form. You retain the right to revoke access and terminate the session at any time by closing the remote support application or disconnecting from the session.</p>
+
+      <p><strong>Scope of Service.</strong> Stonevell's remote support covers software-level troubleshooting, optimization, configuration, malware removal, and related technical assistance. Remote support does not cover hardware repair, physical component replacement, or issues requiring hands-on access to the device.</p>
+
+      <p><strong>Limitation of Liability.</strong> Stonevell exercises reasonable care during every remote session. However, Stonevell is not responsible for:</p>
+      <ul>
+        <li>Pre-existing hardware failures or defects, including but not limited to failing hard drives, overheating components, or damaged screens</li>
+        <li>Data loss arising from causes outside the scope of the support session, including but not limited to drive failure, power loss, or corruption pre-dating the session</li>
+        <li>Third-party software behavior, licensing issues, or compatibility conflicts</li>
+        <li>Network outages or connectivity issues on the customer's end during the session</li>
+        <li>Issues that manifest after the session concludes that are unrelated to the work performed</li>
+      </ul>
+
+      <p><strong>Data &amp; Privacy.</strong> Stonevell does not intentionally access, copy, or store personal files, passwords, or sensitive data during a remote session unless specifically requested by the customer for the purpose of the support task (for example, file transfer or backup assistance). Screen activity during the session is visible to both parties. Stonevell does not record sessions unless explicitly disclosed and agreed upon in advance.</p>
+
+      <p><strong>No Guarantee.</strong> While Stonevell will make every reasonable effort to resolve the issue, not all problems can be fixed remotely. If a remote session cannot resolve the issue, Stonevell will advise on next steps, which may include in-person repair, warranty service, or third-party referral. No refund is owed for time spent diagnosing an issue that ultimately requires a different resolution path.</p>
+
+      <p><strong>Recommended Precautions.</strong> Stonevell recommends that customers back up important files before any support session. While we take every reasonable precaution, unforeseen system behavior during troubleshooting is always possible.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- QUICK ASSIST FALLBACK -->
+  <section id="quick-assist">
+    <h2 class="section-title">Windows Backup Option</h2>
+    <p class="section-subtitle">If our primary tool isn't available, we have a built-in Windows alternative.</p>
+    <div class="fallback-card">
+      <h3><span class="win-icon">⊞</span> Microsoft Quick Assist</h3>
+      <p>If we need to use Microsoft Quick Assist instead of our standard remote tool, we'll send you a 6-digit security code via email or text. You'll open Quick Assist on your Windows computer (search "Quick Assist" in your Start menu), enter the code, and approve the connection. From there, we can see your screen and help resolve the issue — same process, same transparency, same control on your end.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <p>&copy; 2026 <a href="/">Stonevell</a> · Your Digital Fortress · Reno &middot; Sparks &middot; Carson City &middot; Remote</p>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  const form = document.getElementById('supportForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
+
+  // ============================================================
+  // CONFIGURATION — Point this to your form backend
+  // Options: Formspree, Brevo, Cloudflare Function, etc.
+  // ============================================================
+  const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; 
+  // Replace YOUR_FORM_ID with your actual Formspree ID,
+  // or swap the entire URL for your own backend endpoint.
+  // ============================================================
+
+  const validators = {
+    fullName: v => v.trim().length >= 2 ? '' : 'Name is required.',
+    email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Valid email required.',
+    phone: v => /[\d]{7,}/.test(v.replace(/\D/g, '')) ? '' : 'Valid phone number required.',
+    deviceType: v => v ? '' : 'Select a device type.',
+    os: v => v ? '' : 'Select an operating system.',
+    issue: v => v.trim().length >= 10 ? '' : 'Please describe the issue (at least 10 characters).',
+    consent: (_, el) => el.checked ? '' : 'You must authorize remote access to proceed.'
+  };
+
+  function showError(fieldId, msg) {
+    const errEl = document.getElementById(fieldId + '-error');
+    const input = document.getElementById(fieldId);
+    if (errEl) errEl.textContent = msg;
+    if (input) {
+      if (msg) input.classList.add('error');
+      else input.classList.remove('error');
+    }
+  }
+
+  function clearErrors() {
+    form.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+    form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
+  }
+
+  function validateAll() {
+    let valid = true;
+    for (const [field, fn] of Object.entries(validators)) {
+      const el = document.getElementById(field);
+      const msg = fn(el.value || '', el);
+      showError(field, msg);
+      if (msg) valid = false;
+    }
+    return valid;
+  }
+
+  // Live clearing of errors on input
+  Object.keys(validators).forEach(field => {
+    const el = document.getElementById(field);
+    const evt = el.type === 'checkbox' ? 'change' : 'input';
+    el.addEventListener(evt, () => {
+      const msg = validators[field](el.value || '', el);
+      showError(field, msg);
+    });
+  });
+
+  // Phone formatting
+  document.getElementById('phone').addEventListener('input', function(e) {
+    let digits = this.value.replace(/\D/g, '').slice(0, 10);
+    if (digits.length >= 7) {
+      this.value = '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
+    } else if (digits.length >= 4) {
+      this.value = '(' + digits.slice(0,3) + ') ' + digits.slice(3);
+    }
+  });
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    clearErrors();
+
+    if (!validateAll()) {
+      formStatus.textContent = 'Please fix the errors above.';
+      formStatus.className = 'form-status error';
+      return;
+    }
+
+    submitBtn.classList.add('btn-loading');
+    submitBtn.disabled = true;
+    formStatus.textContent = 'Sending...';
+    formStatus.className = 'form-status';
+
+    const data = {
+      fullName: form.fullName.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      city: form.city.value.trim(),
+      deviceType: form.deviceType.value,
+      os: form.os.value,
+      issue: form.issue.value.trim(),
+      urgency: form.urgency.value,
+      bestTime: form.bestTime.value,
+      consent: 'Authorized',
+      _subject: 'Stonevell Remote Support Request'
+    };
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        formStatus.textContent = 'Request received. We\'ll be in touch shortly.';
+        formStatus.className = 'form-status success';
+        form.reset();
+      } else {
+        throw new Error('Server returned ' + res.status);
+      }
+    } catch (err) {
+      formStatus.textContent = 'Something went wrong. Email us at mike@stonevell.com instead.';
+      formStatus.className = 'form-status error';
+      console.error('Form submission error:', err);
+    } finally {
+      submitBtn.classList.remove('btn-loading');
+      submitBtn.disabled = false;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
