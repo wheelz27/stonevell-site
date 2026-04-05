@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Confirmed — Stonevell IT</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #13131a;
+      border: 1px solid #2a2a3a;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 0 60px rgba(99,102,241,.15);
+    }
+    .check {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg,#6366f1,#8b5cf6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 32px;
+    }
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 12px; }
+    p  { color: #9ca3af; line-height: 1.6; margin-bottom: 8px; }
+    .detail {
+      background: #1c1c2a;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      text-align: left;
+    }
+    .detail p { color: #e0e0e0; margin: 4px 0; font-size: .95rem; }
+    .detail span { color: #6366f1; font-weight: 600; }
+    a.btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: linear-gradient(135deg,#6366f1,#8b5cf6);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: opacity .2s;
+    }
+    a.btn:hover { opacity: .85; }
+    .logo { font-size: .85rem; color: #4b5563; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1>Payment Confirmed!</h1>
+    <p>Thank you for choosing Stonevell IT Services.</p>
+    <p>We'll be in touch shortly to schedule your service.</p>
+
+    <div class="detail" id="details">
+      <p>Loading your receipt…</p>
+    </div>
+
+    <a class="btn" href="index.html">Back to Home</a>
+    <p class="logo">Stonevell IT — Sparks, NV · 775-484-3804</p>
+  </div>
+
+  <script>
+    (async () => {
+      const params  = new URLSearchParams(window.location.search);
+      const sid     = params.get('session_id');
+      const box     = document.getElementById('details');
+
+      if (!sid) {
+        box.innerHTML = '<p style="color:#ef4444">No session found.</p>';
+        return;
+      }
+
+      try {
+        const res  = await fetch(`https://web-production-610fc.up.railway.app/session?id=${sid}`);
+        const data = await res.json();
+
+        if (data.success) {
+          const dollars = (data.amount_total / 100).toFixed(2);
+          box.innerHTML = `
+            <p><span>Email:</span> ${data.customer_email || '—'}</p>
+            <p><span>Service:</span> ${data.service || '—'}</p>
+            <p><span>Amount Paid:</span> $${dollars} USD</p>
+            <p><span>Status:</span> ${data.payment_status}</p>
+          `;
+        } else {
+          box.innerHTML = '<p>Payment received. Check your email for confirmation.</p>';
+        }
+      } catch {
+        box.innerHTML = '<p>Payment received. Check your email for confirmation.</p>';
+      }
+    })();
+  </script>
+</body>
+</html>
