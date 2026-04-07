@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation — Scale Without Headcount | Stonevell</title>
+<meta name="description" content="Stonevell AI Automation: Scale your business without adding headcount. Autonomous units for revenue recovery, lead intelligence, reporting, and customer support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --gold-dim: #8a7234;
+  --dark: #0a0a0a;
+  --text-primary: #f0ece4;
+  --text-secondary: #b0a99d;
+  --text-muted: #7a746a;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+  background: var(--dark);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  border-bottom: 1px solid var(--gold-dim);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-brand a { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.nav-logo {
+  width: 36px; height: 36px;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600; font-size: 16px;
+  letter-spacing: 2px; color: var(--text-primary);
+}
+.nav-sep { color: var(--gold); margin: 0 6px; font-size: 8px; }
+.nav-sub {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500; font-size: 11px;
+  letter-spacing: 3px; color: var(--gold); text-transform: uppercase;
+}
+.nav-back {
+  font-size: 14px; color: var(--text-secondary);
+  cursor: pointer; background: none; border: none;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav-back:hover { color: var(--gold); }
+
+/* Bento Grid Container */
+.bento-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  grid-auto-rows: auto;
+}
+
+@media (max-width: 1024px) {
+  .bento-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bento Tiles */
+.bento-tile {
+  position: relative;
+  padding: 40px;
+  border: 2px solid var(--gold-dim);
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.bento-tile::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.05) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.bento-tile:hover {
+  border-color: var(--gold);
+  background: rgba(10, 10, 10, 0.8);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(201, 168, 76, 0.1);
+}
+
+.bento-tile > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Tile (2x2) */
+.hero-tile {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-tile h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-tile p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.hero-cta:hover {
+  background: var(--gold-light);
+  transform: translateX(4px);
+}
+
+/* ROI Calculator Tile */
+.calculator-tile {
+  grid-column: span 1;
+}
+
+.calculator-tile h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: var(--gold-light);
+}
+
+.calculator-tile form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.calculator-tile input {
+  padding: 12px;
+  background: rgba(201, 168, 76, 0.05);
+  border: 1px solid var(--gold-dim);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.calculator-tile input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.calculator-tile button {
+  padding: 12px;
+  background: var(--text-primary);
+  color: var(--dark);
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.calculator-tile button:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Unit Cards */
+.unit-tile {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.unit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.unit-status {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #22c55e;
+  text-transform: uppercase;
+}
+
+.unit-number {
+  font-size: 24px;
+  color: var(--gold-dim);
+  font-weight: 700;
+}
+
+.unit-tile h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.unit-tile p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.unit-link {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.unit-link:hover {
+  color: var(--gold-light);
+  transform: translateX(4px);
+}
+
+/* Sovereign AI Tile (2x1) */
+.sovereign-tile {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .sovereign-tile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sovereign-tile h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.sovereign-tile p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.sovereign-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  border: 1px solid var(--gold-dim);
+}
+
+.sovereign-features div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.sovereign-features span {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* Pricing Section */
+.pricing-section {
+  max-width: 1400px;
+  margin: 60px auto 0;
+  padding: 60px 20px;
+  border-top: 1px solid var(--gold-dim);
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: var(--gold-light);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.pricing-card {
+  padding: 40px;
+  border: 2px solid var(--gold-dim);
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  border-color: var(--gold);
+  background: rgba(10, 10, 10, 0.8);
+}
+
+.pricing-card.popular {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.05);
+  transform: scale(1.05);
+}
+
+.pricing-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid var(--gold-dim);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.pricing-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.pricing-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.pricing-amount {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.pricing-period {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.pricing-features li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  color: var(--text-secondary);
+  list-style: none;
+}
+
+.pricing-features span {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.pricing-button {
+  width: 100%;
+  padding: 12px;
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pricing-button:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--gold-dim);
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="nav">
+  <div class="nav-brand">
+    <a href="/">
+      <div class="nav-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="nav-title">STONEVELL</div>
+        <div class="nav-sub">Automation</div>
+      </div>
+    </a>
+  </div>
+  <a href="/" class="nav-back">← Back to Home</a>
+</div>
+
+<!-- Bento Grid -->
+<div class="bento-container">
+  
+  <!-- Hero Tile -->
+  <div class="bento-tile hero-tile">
+    <h1>Scale Without<br/>Headcount.</h1>
+    <p>We deploy autonomous operational units that do the work of a $60k/year hire for a fraction of the cost.</p>
+    <button class="hero-cta">Analyze My Profit Leak</button>
+  </div>
+  
+  <!-- ROI Calculator -->
+  <div class="bento-tile calculator-tile">
+    <h3>ROI Engine</h3>
+    <form>
+      <input type="number" placeholder="Monthly Revenue ($)" required>
+      <input type="number" placeholder="Manual Hours / Week" required>
+      <button type="button">GENERATE BLUEPRINT</button>
+    </form>
+  </div>
+  
+  <!-- Revenue Recovery Unit -->
+  <div class="bento-tile unit-tile">
+    <div class="unit-header">
+      <div class="unit-status">Active</div>
+      <div class="unit-number">01</div>
+    </div>
+    <h4>Revenue Recovery</h4>
+    <p>Autonomous checkout & abandoned cart rescue. Average 18% lift in recovered sales.</p>
+    <a href="#" class="unit-link">Deploy Unit →</a>
+  </div>
+  
+  <!-- Growth Intel Unit -->
+  <div class="bento-tile unit-tile">
+    <div class="unit-header">
+      <div class="unit-status">Active</div>
+      <div class="unit-number">02</div>
+    </div>
+    <h4>Growth Intel</h4>
+    <p>Deep-web lead enrichment & prospect monitoring. 24/7 automated research.</p>
+    <a href="#" class="unit-link">Deploy Unit →</a>
+  </div>
+  
+  <!-- Dynamic Reporting Unit -->
+  <div class="bento-tile unit-tile">
+    <div class="unit-header">
+      <div class="unit-status">Active</div>
+      <div class="unit-number">03</div>
+    </div>
+    <h4>Dynamic Reporting</h4>
+    <p>Multi-channel data harmonization. ROI insights in under 5 minutes.</p>
+    <a href="#" class="unit-link">Deploy Unit →</a>
+  </div>
+  
+  <!-- Response & Triage Unit -->
+  <div class="bento-tile unit-tile">
+    <div class="unit-header">
+      <div class="unit-status">Active</div>
+      <div class="unit-number">04</div>
+    </div>
+    <h4>Response & Triage</h4>
+    <p>24/7 customer support automation. 90% instant resolution rate.</p>
+    <a href="#" class="unit-link">Deploy Unit →</a>
+  </div>
+  
+  <!-- Sovereign AI -->
+  <div class="bento-tile sovereign-tile">
+    <div>
+      <h4>Sovereign AI</h4>
+      <p>Hardened <strong>OpenClaw</strong> deployments on your private infrastructure. No SaaS markups. 100% data privacy and control.</p>
+    </div>
+    <div class="sovereign-features">
+      <div><span>✓</span> Sandboxed Docker Env</div>
+      <div><span>✓</span> HITL Auth Protocol</div>
+      <div><span>✓</span> CVE-2026 Patched</div>
+      <div><span>✓</span> Zero-Trust Isolation</div>
+    </div>
+  </div>
+  
+</div>
+
+<!-- Pricing Section -->
+<div class="pricing-section">
+  <h2 class="section-title">Pricing Menu</h2>
+  
+  <div class="pricing-grid">
+    <!-- Revenue Recovery -->
+    <div class="pricing-card">
+      <h3>Revenue Recovery</h3>
+      <p>1 Custom Agent Build</p>
+      <div class="pricing-amount">$3,500</div>
+      <div class="pricing-period">One-time setup</div>
+      <ul class="pricing-features">
+        <li><span>✓</span> Cart Recovery Agent</li>
+        <li><span>✓</span> 18% Avg Recovery</li>
+        <li><span>✓</span> 7-Day Deployment</li>
+      </ul>
+      <button class="pricing-button">Get Started</button>
+    </div>
+    
+    <!-- OpenClaw Private -->
+    <div class="pricing-card popular">
+      <div class="pricing-badge">Popular</div>
+      <h3>OpenClaw Private</h3>
+      <p>3-Unit Sovereign Deployment</p>
+      <div class="pricing-amount">$7,500</div>
+      <div class="pricing-period">One-time setup</div>
+      <ul class="pricing-features">
+        <li><span>✓</span> Private Infrastructure</li>
+        <li><span>✓</span> 100% Data Privacy</li>
+        <li><span>✓</span> Hardened Security</li>
+      </ul>
+      <button class="pricing-button">Deploy Now</button>
+    </div>
+    
+    <!-- Growth Ops Suite -->
+    <div class="pricing-card">
+      <h3>Growth Ops Suite</h3>
+      <p>Full Automation System</p>
+      <div class="pricing-amount">$12,000</div>
+      <div class="pricing-period">One-time setup</div>
+      <ul class="pricing-features">
+        <li><span>✓</span> Lead-to-Report Automation</li>
+        <li><span>✓</span> All 4 Operational Units</li>
+        <li><span>✓</span> Custom Integration</li>
+      </ul>
+      <button class="pricing-button">Inquire</button>
+    </div>
+  </div>
+  
+  <!-- Retainer -->
+  <div class="pricing-card" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center;">
+    <div>
+      <h3>Managed Agentic Support</h3>
+      <p>24/7 Monitoring & Monthly Skill Updates</p>
+      <div class="pricing-amount">$1,500<span style="font-size: 16px; color: var(--text-secondary);">/month</span></div>
+    </div>
+    <button class="pricing-button" style="width: auto; padding: 14px 32px;">Subscribe</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  © 2026 Stonevell. All rights reserved. | Powered by Valhalla
+</div>
+
+</body>
+</html>
