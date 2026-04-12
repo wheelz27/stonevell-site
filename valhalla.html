@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Valhalla System — Stonevell</title>
 <meta name="description" content="The Valhalla System is Stonevell's proprietary AI automation framework — built for service businesses that need to capture more leads, eliminate manual work, and operate at scale.">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -358,6 +359,356 @@ html, body {
     </div>
   </div>
 </section>
+
+<!-- INTERACTIVE DEMO -->
+<section class="demo-section" id="demo">
+  <p class="section-label" style="text-align:center;">Live Demo</p>
+  <h2 class="section-title" style="text-align:center;">Watch It Work</h2>
+  <p class="section-sub">Pick a scenario. Watch the Valhalla System handle it. Then book a repair or schedule a consultation.</p>
+
+  <div class="demo-shell">
+    <div class="demo-picker">
+      <button class="demo-tab active" data-demo="lead" onclick="runDemo('lead', this)">
+        <span class="demo-tab-icon">📞</span>
+        Lead Recovery
+      </button>
+      <button class="demo-tab" data-demo="repair" onclick="runDemo('repair', this)">
+        <span class="demo-tab-icon">🔧</span>
+        Repair Booking
+      </button>
+      <button class="demo-tab" data-demo="followup" onclick="runDemo('followup', this)">
+        <span class="demo-tab-icon">⚡</span>
+        Auto Follow-Up
+      </button>
+    </div>
+
+    <div class="demo-terminal" id="demo-terminal">
+      <div class="demo-terminal-bar">
+        <span class="demo-dot demo-dot--red"></span>
+        <span class="demo-dot demo-dot--yellow"></span>
+        <span class="demo-dot demo-dot--green"></span>
+        <span class="demo-terminal-title" id="demo-terminal-title">Valhalla System — Lead Recovery</span>
+      </div>
+      <div class="demo-log" id="demo-log">
+        <div class="demo-log-idle">Select a scenario above to run a live demo →</div>
+      </div>
+    </div>
+
+    <div class="demo-cta-strip" id="demo-cta-strip" style="display:none;">
+      <div class="demo-cta-text" id="demo-cta-text"></div>
+      <div class="demo-cta-btns">
+        <a id="demo-book-btn" href="repair.html#diagnose" class="btn btn-solid">Book a Repair &rarr;</a>
+        <a href="contact.html" class="btn btn-outline">Schedule a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ── DEMO SECTION ── */
+.demo-section {
+  padding: 80px 40px;
+  background: rgba(255,255,255,0.01);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.demo-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.demo-picker {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.demo-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.demo-tab:hover {
+  border-color: var(--gold-dim);
+  color: var(--text-primary);
+}
+
+.demo-tab.active {
+  background: rgba(201,168,76,0.08);
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+.demo-tab-icon { font-size: 16px; }
+
+/* Terminal window */
+.demo-terminal {
+  background: #050508;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.demo-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.demo-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.demo-dot--red    { background: #ff5f57; }
+.demo-dot--yellow { background: #ffbd2e; }
+.demo-dot--green  { background: #28ca41; }
+
+.demo-terminal-title {
+  margin-left: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.demo-log {
+  padding: 20px 24px;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.demo-log-idle {
+  color: var(--text-muted);
+  font-style: italic;
+  margin: auto;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+}
+
+.demo-log-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  opacity: 0;
+  animation: logFadeIn 0.3s ease forwards;
+}
+
+.demo-log-time {
+  color: var(--text-muted);
+  font-size: 11px;
+  flex-shrink: 0;
+  min-width: 70px;
+}
+
+.demo-log-icon { flex-shrink: 0; font-size: 12px; }
+
+.demo-log-msg { color: var(--text-primary); }
+.demo-log-msg--gold   { color: var(--gold); font-weight: 600; }
+.demo-log-msg--green  { color: #4ade80; }
+.demo-log-msg--muted  { color: var(--text-muted); }
+
+.demo-cursor {
+  display: inline-block;
+  width: 7px; height: 13px;
+  background: var(--gold);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+@keyframes logFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* CTA strip below terminal */
+.demo-cta-strip {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 10px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: logFadeIn 0.5s ease both;
+}
+
+.demo-cta-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+.demo-cta-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .demo-section { padding: 60px 20px; }
+  .demo-picker { flex-direction: column; }
+  .demo-tab { justify-content: center; }
+  .demo-cta-strip { flex-direction: column; }
+  .demo-cta-btns { width: 100%; }
+  .demo-cta-btns .btn { flex: 1; justify-content: center; }
+}
+</style>
+
+<script>
+const DEMOS = {
+  lead: {
+    title: "Valhalla System — Lead Recovery",
+    cta: "This happens automatically — every time. No leads go cold, no follow-ups get missed.",
+    bookHref: "repair.html?source=valhalla-lead#diagnose",
+    steps: [
+      { delay: 0,    icon: "📞", msg: "Missed call detected — 9:47 PM", cls: "" },
+      { delay: 600,  icon: "✓",  msg: "Lead logged automatically", cls: "demo-log-msg--green" },
+      { delay: 1200, icon: "💬", msg: "Instant text-back sent: \"Hi! This is Stonevell — missed your call. What do you need help with?\"", cls: "demo-log-msg--gold" },
+      { delay: 2000, icon: "✓",  msg: "Text delivered — 9:47:09 PM", cls: "demo-log-msg--green" },
+      { delay: 2800, icon: "🔗", msg: "Booking link included in message", cls: "" },
+      { delay: 3600, icon: "👤", msg: "Lead tagged in CRM — status: Contacted", cls: "" },
+      { delay: 4400, icon: "📅", msg: "Follow-up reminder scheduled — 24hrs", cls: "demo-log-msg--muted" },
+      { delay: 5400, icon: "✅", msg: "Appointment booked — next morning 10 AM", cls: "demo-log-msg--gold" },
+    ]
+  },
+  repair: {
+    title: "Valhalla System — Repair Booking",
+    cta: "Every repair request processed immediately. You focus on fixing devices — the system handles the rest.",
+    bookHref: "repair.html?source=valhalla-repair#diagnose",
+    steps: [
+      { delay: 0,    icon: "📝", msg: "Repair request submitted — broken screen, iPhone 14", cls: "" },
+      { delay: 600,  icon: "✓",  msg: "Device type and issue logged", cls: "demo-log-msg--green" },
+      { delay: 1200, icon: "🏷️", msg: "Job tagged: Phone Repair / Screen / Priority: Standard", cls: "" },
+      { delay: 2000, icon: "💬", msg: "Confirmation text sent: \"Got it — screen repair. We'll quote you within 2 hours.\"", cls: "demo-log-msg--gold" },
+      { delay: 2800, icon: "🔍", msg: "Parts check triggered automatically", cls: "" },
+      { delay: 3600, icon: "💰", msg: "Quote generated: $89–$120 depending on model", cls: "demo-log-msg--gold" },
+      { delay: 4400, icon: "📅", msg: "Same-day slot offered — 2:00 PM today", cls: "" },
+      { delay: 5400, icon: "✅", msg: "Booking confirmed — repair ticket created", cls: "demo-log-msg--gold" },
+    ]
+  },
+  followup: {
+    title: "Valhalla System — Automated Follow-Up",
+    cta: "Most businesses never follow up. The Valhalla System does it for you — every time, without fail.",
+    bookHref: "contact.html?source=valhalla-followup",
+    steps: [
+      { delay: 0,    icon: "📋", msg: "Intake form submitted — no response in 4 hours", cls: "" },
+      { delay: 600,  icon: "🔔", msg: "Follow-up trigger fired automatically", cls: "demo-log-msg--gold" },
+      { delay: 1200, icon: "💬", msg: "Message sent: \"Still dealing with that issue? We have a slot open tomorrow morning.\"", cls: "" },
+      { delay: 2000, icon: "✓",  msg: "Message delivered — 2:14 PM", cls: "demo-log-msg--green" },
+      { delay: 2800, icon: "↩️", msg: "Reply received: \"Yes, what time works?\"", cls: "demo-log-msg--gold" },
+      { delay: 3600, icon: "📅", msg: "Automated response: booking link + 3 available slots", cls: "" },
+      { delay: 4400, icon: "✅", msg: "Appointment booked — 9:00 AM tomorrow", cls: "demo-log-msg--gold" },
+      { delay: 5400, icon: "📊", msg: "Lead status updated: Converted", cls: "demo-log-msg--green" },
+    ]
+  }
+};
+
+function runDemo(demoKey, tabEl) {
+  const demo = DEMOS[demoKey];
+  const log = document.getElementById('demo-log');
+  const title = document.getElementById('demo-terminal-title');
+  const ctaStrip = document.getElementById('demo-cta-strip');
+  const ctaText = document.getElementById('demo-cta-text');
+  const bookBtn = document.getElementById('demo-book-btn');
+
+  // Update active tab
+  document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+  tabEl.classList.add('active');
+
+  // Reset terminal
+  title.textContent = demo.title;
+  log.innerHTML = '<div class="demo-log-line"><span class="demo-log-icon">▶</span><span class="demo-log-msg demo-log-msg--gold">Initializing system...</span></div>';
+  ctaStrip.style.display = 'none';
+
+  // Get a base "time" for the log
+  const now = new Date();
+  const baseHour = now.getHours();
+  const baseMin = now.getMinutes();
+
+  function fmt(offsetSec) {
+    const d = new Date(now.getTime() + offsetSec * 1000);
+    return d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+  }
+
+  // Animate steps
+  demo.steps.forEach((step, i) => {
+    setTimeout(() => {
+      const line = document.createElement('div');
+      line.className = 'demo-log-line';
+      line.style.animationDelay = '0s';
+      line.innerHTML = `
+        <span class="demo-log-time">${fmt(step.delay / 1000)}</span>
+        <span class="demo-log-icon">${step.icon}</span>
+        <span class="demo-log-msg ${step.cls}">${step.msg}</span>
+      `;
+      log.appendChild(line);
+      log.scrollTop = log.scrollHeight;
+    }, step.delay + 400);
+  });
+
+  // Show cursor while running
+  const lastDelay = demo.steps[demo.steps.length - 1].delay;
+  setTimeout(() => {
+    const cursor = document.createElement('span');
+    cursor.className = 'demo-cursor';
+    log.appendChild(cursor);
+  }, 800);
+
+  // Show CTA after last step
+  setTimeout(() => {
+    // Remove cursor
+    const cursor = log.querySelector('.demo-cursor');
+    if (cursor) cursor.remove();
+
+    ctaText.textContent = demo.cta;
+    bookBtn.href = demo.bookHref;
+    ctaStrip.style.display = 'flex';
+  }, lastDelay + 1200);
+}
+
+// Auto-run first demo on load
+window.addEventListener('DOMContentLoaded', () => {
+  const firstTab = document.querySelector('.demo-tab[data-demo="lead"]');
+  if (firstTab) runDemo('lead', firstTab);
+});
+</script>
 
 <!-- PIPELINE -->
 <section class="pipeline-section">
