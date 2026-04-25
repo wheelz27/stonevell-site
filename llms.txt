@@ -1,0 +1,27 @@
+# Stonevell — Your Digital Fortress
+> Stonevell is a Reno, Nevada IT services company providing same-day computer and phone repair, cybersecurity, managed IT support, and AI automation for small businesses.
+
+## Services
+- Computer Repair: Same-day PC and Mac repair in Reno/Sparks. $50-$150 most jobs.
+- Phone Repair: Screen replacement, battery, water damage.
+- Virus Removal & Cybersecurity: Malware cleanup, endpoint protection, network security audits.
+- Data Recovery: Hard drive, SSD, and cloud backup recovery.
+- Managed IT: Ongoing IT support for small businesses. No contracts.
+- AI Automation: Custom AI workflows, chatbots, and business process automation.
+- Web Presence: Website design and local SEO for Reno businesses.
+- Remote Support: Same-day remote troubleshooting anywhere in Nevada.
+
+## Contact
+- Phone: 775-484-3804
+- Email: hello@stonevell.com
+- Website: https://www.stonevell.com
+- Location: Reno/Sparks, Nevada
+- Service Area: Reno, Sparks, Carson City, Northern Nevada
+
+## Links
+- [Home](https://www.stonevell.com/)
+- [Device Repair](https://www.stonevell.com/repair.html)
+- [Cybersecurity](https://www.stonevell.com/cybersecurity.html)
+- [AI Automation](https://www.stonevell.com/ai-automation.html)
+- [Managed IT](https://www.stonevell.com/managed-it.html)
+- [Contact](https://www.stonevell.com/contact.html)
