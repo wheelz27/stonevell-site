@@ -95,9 +95,9 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   font-family: 'Raleway', sans-serif;
-  background: var(--dark);
+  background: #050505;
   color: var(--text-primary);
   overflow-x: hidden;
 }
@@ -105,42 +105,28 @@ html, body {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 100px 20px 80px;
+  background:
+    linear-gradient(180deg, rgba(5,5,8,0.78), rgba(5,5,8,0.94)),
+    url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1920&q=80') center top / cover;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1920&q=80');
-  background-size: cover;
-  background-position: center top;
-}
-
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(5,5,8,0.80) 0%,
-    rgba(5,5,8,0.45) 30%,
-    rgba(5,5,8,0.40) 55%,
-    rgba(5,5,8,0.75) 80%,
-    rgba(5,5,8,1) 100%
-  );
+  display: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
   text-align: center;
-  max-width: 1000px;
+  width: min(1180px, 100%);
 }
 
 .hero-title {
@@ -169,11 +155,17 @@ html, body {
 
 .path-selector {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1180px;
   margin-top: 40px;
+}
+
+@media (max-width: 1100px) {
+  .path-selector {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -185,10 +177,9 @@ html, body {
 
 .path-card {
   position: relative;
-  padding: 40px;
+  padding: 28px;
   border: 2px solid var(--gold-dim);
-  background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.82);
   border-radius: 12px;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -206,13 +197,23 @@ html, body {
 }
 
 .path-icon {
-  font-size: 48px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 999px;
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
 .path-title {
   font-family: 'Cinzel', serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--gold-light);
@@ -401,12 +402,12 @@ html, body {
   <div class="hero-content">
     <div class="hero-subtitle">Stonevell ◆ Northern Nevada</div>
     <h1 class="hero-title">Your Digital Fortress</h1>
-    <p class="hero-tagline">The only Reno shop that fixes your computer <em>and</em> automates your business.</p>
+    <p class="hero-tagline">Choose the Stonevell lane you need.</p>
 
     <div class="path-selector">
       <!-- Repair Path -->
       <a href="/repair.html" class="path-card">
-        <div class="path-icon">🔧</div>
+        <div class="path-icon">IT</div>
         <h2 class="path-title">Device Repair &<br/>Remote Support</h2>
         <p class="path-description">Fast, honest diagnostics and repair for laptops, desktops, and mobile devices. Same-day service across Reno, Sparks & Carson City.</p>
         <div style="font-size:12px;color:var(--text-muted);margin-top:-8px;">Free diagnosis · Most repairs $50–$150</div>
@@ -415,11 +416,29 @@ html, body {
 
       <!-- Automation Path -->
       <a href="/automation.html" class="path-card">
-        <div class="path-icon">⚡</div>
+        <div class="path-icon">AI</div>
         <h2 class="path-title">AI Automation &<br/>Scale Without Headcount</h2>
         <p class="path-description">Custom autonomous systems that eliminate busywork, capture leads, and scale your operations—powered by The Valhalla System.</p>
         <div style="font-size:12px;color:var(--text-muted);margin-top:-8px;">From $499/mo · No long-term contracts</div>
         <div class="path-cta">Explore Solutions</div>
+      </a>
+
+      <!-- EdgeIntel Path -->
+      <a href="/edgeintel.html" class="path-card">
+        <div class="path-icon">EI</div>
+        <h2 class="path-title">EdgeIntel<br/>Edge AI Monitoring</h2>
+        <p class="path-description">Real-time edge monitoring, anomaly detection, device health, and multi-cloud operations for distributed systems.</p>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:-8px;">Predictive alerts · Multi-cloud</div>
+        <div class="path-cta">Open EdgeIntel</div>
+      </a>
+
+      <!-- Arena Path -->
+      <a href="/hard-knocks-arena.html" class="path-card">
+        <div class="path-icon">HK</div>
+        <h2 class="path-title">Hard Knocks<br/>Rebuild Arena</h2>
+        <p class="path-description">A real-world business arena where operators lose access to money, fame, and networks, then rebuild in public with every move verified.</p>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:-8px;">Live rebuilds · Verified moves</div>
+        <div class="path-cta">Enter Arena</div>
       </a>
     </div>
 
@@ -453,7 +472,7 @@ html, body {
   </div>
 
   <div class="footer">
-    No contracts. No runaround. Just results. &nbsp;·&nbsp; <a href="tel:7754843804">775-484-3804</a> &nbsp;·&nbsp; <a href="/repair.html">Repair</a> &nbsp;·&nbsp; <a href="/automation.html">Automation</a>
+    No contracts. No runaround. Just results. &nbsp;·&nbsp; <a href="tel:7754843804">775-484-3804</a> &nbsp;·&nbsp; <a href="/repair.html">Repair</a> &nbsp;·&nbsp; <a href="/automation.html">Automation</a> &nbsp;·&nbsp; <a href="/hard-knocks-arena.html">Arena</a>
   </div>
 </div>
 
