@@ -6,8 +6,6 @@
 <title>Stonevell — Your Digital Fortress | Reno, NV</title>
 <meta name="description" content="Stonevell: Same-day computer repair, cybersecurity, managed IT, and AI automation for Reno, Sparks, and Northern Nevada businesses. 775-484-3804.">
 <link rel="canonical" href="https://www.stonevell.com/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.stonevell.com/">
 <meta property="og:title" content="Stonevell — Your Digital Fortress | Reno, NV">
@@ -16,14 +14,11 @@
 <meta property="og:site_name" content="Stonevell">
 <meta property="og:locale" content="en_US">
 <meta property="fb:page_id" content="61575459820393">
-
-<!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Stonevell — Your Digital Fortress | Reno, NV">
 <meta name="twitter:description" content="Same-day computer repair, cybersecurity, managed IT, and AI automation for Reno and Northern Nevada. 775-484-3804.">
 <meta name="twitter:image" content="https://www.stonevell.com/og-image.png">
 
-<!-- LocalBusiness schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,58 +28,36 @@
   "url": "https://www.stonevell.com",
   "telephone": "+17754843804",
   "email": "hello@stonevell.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Reno",
-    "addressRegion": "NV",
-    "addressCountry": "US"
-  },
+  "address": { "@type": "PostalAddress", "addressLocality": "Reno", "addressRegion": "NV", "addressCountry": "US" },
   "areaServed": [
     { "@type": "City", "name": "Reno" },
     { "@type": "City", "name": "Sparks" },
     { "@type": "City", "name": "Carson City" }
   ],
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 39.5296, "longitude": -119.8138 },
-    "geoRadius": "50000"
-  },
   "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Services",
+    "@type": "OfferCatalog", "name": "Services",
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Computer Repair" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Phone Repair" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Virus Removal" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Recovery" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cybersecurity" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed IT Support" } }
     ]
   },
   "priceRange": "$50-$499",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-    "opens": "08:00",
-    "closes": "20:00"
-  },
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61575459820393"
-  ]
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "20:00" },
+  "sameAs": ["https://www.facebook.com/profile.php?id=61575459820393"]
 }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ================================================================
-   STONEVELL — YOUR DIGITAL FORTRESS
-   Dark luxury, gold on obsidian. $10k polish.
+   STONEVELL v3 — Editorial dark luxury. No boxes. No grids. No AI slop.
    ================================================================ */
-
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -92,1495 +65,1078 @@
   --gold-light: #e2c97e;
   --gold-bright: #f0d078;
   --gold-dim: #8a7234;
-  --gold-glow: rgba(201, 168, 76, 0.12);
-  --dark: #0a0a0a;
-  --dark-surface: #111111;
-  --dark-card: #0e0e0e;
-  --text-primary: #f0ece4;
-  --text-secondary: #b0a99d;
-  --text-muted: #7a746a;
-  --section-pad: clamp(80px, 12vw, 160px);
-  --content-max: 1200px;
+  --obsidian: #09090b;
+  --surface: #111113;
+  --surface-2: #18181b;
+  --text: #eae8e1;
+  --text-2: #a8a29e;
+  --text-3: #6b6560;
+  --pad-x: clamp(24px, 6vw, 80px);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Raleway', sans-serif;
-  background: var(--dark);
-  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--obsidian);
+  color: var(--text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── SCROLL REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── NAVIGATION ── */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 clamp(20px, 4vw, 48px);
-  height: 72px;
-  background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
-  transition: background 0.4s, border-color 0.4s;
-}
-
-.nav.scrolled {
-  background: rgba(10, 10, 10, 0.95);
-  border-color: rgba(201, 168, 76, 0.2);
-}
-
-.nav-brand {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 3px;
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.3s;
-  position: relative;
-}
-
-.nav-links a::after {
+/* Grain overlay */
+body::after {
   content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.3s;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
 }
 
-.nav-links a:hover { color: var(--gold); }
-.nav-links a:hover::after { width: 100%; }
+/* ── REVEAL ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+[data-reveal="2"] { transition-delay: 0.12s; }
+[data-reveal="3"] { transition-delay: 0.24s; }
+[data-reveal="4"] { transition-delay: 0.36s; }
 
-.nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 24px;
-  background: transparent;
-  border: 1px solid var(--gold-dim);
-  border-radius: 6px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: var(--gold);
-  text-decoration: none;
-  transition: all 0.3s;
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--pad-x); height: 64px;
+  background: rgba(9,9,11,0.5);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(201,168,76,0);
+  transition: border-color 0.5s, background 0.5s;
+}
+nav.scrolled {
+  background: rgba(9,9,11,0.92);
+  border-color: rgba(201,168,76,0.12);
+}
+.nav-logo {
+  font-family: 'Cinzel', serif; font-weight: 700; font-size: 16px;
+  letter-spacing: 4px; color: var(--gold); text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-right {
+  display: flex; align-items: center; gap: 28px;
+}
+.nav-right a {
+  font-size: 12px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-2);
+  text-decoration: none; transition: color 0.3s;
+}
+.nav-right a:hover { color: var(--gold); }
+.nav-phone {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 20px; border: 1px solid var(--gold-dim); border-radius: 100px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  color: var(--gold); text-decoration: none; transition: all 0.3s;
+}
+.nav-phone:hover {
+  background: var(--gold); color: var(--obsidian); border-color: var(--gold);
 }
 
-.nav-cta:hover {
-  background: var(--gold);
-  color: var(--dark);
-  border-color: var(--gold);
-}
-
-.nav-mobile-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-}
-
-.nav-mobile-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--gold);
-  margin: 5px 0;
-  transition: all 0.3s;
+@media (max-width: 768px) {
+  .nav-right a:not(.nav-phone) { display: none; }
 }
 
 /* ── HERO ── */
 .hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px clamp(20px, 4vw, 48px) 80px;
+  position: relative; min-height: 100svh;
+  display: flex; align-items: flex-end;
+  padding: 0 var(--pad-x) 10vh;
   overflow: hidden;
 }
 
 .hero-bg {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201, 168, 76, 0.06), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(201, 168, 76, 0.03), transparent),
-    linear-gradient(180deg, var(--dark) 0%, #080808 100%);
+    radial-gradient(ellipse 70% 50% at 70% 30%, rgba(201,168,76,0.07), transparent),
+    radial-gradient(ellipse 50% 60% at 20% 70%, rgba(201,168,76,0.03), transparent),
+    var(--obsidian);
 }
 
-.hero-particles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
+/* Decorative circles */
+.hero-orb {
+  position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1);
+  pointer-events: none;
 }
+.hero-orb-1 { width: 600px; height: 600px; top: -15%; right: -10%; }
+.hero-orb-2 { width: 300px; height: 300px; bottom: 10%; left: -5%; border-color: rgba(201,168,76,0.06); }
+.hero-orb-3 { width: 120px; height: 120px; top: 30%; right: 20%; background: rgba(201,168,76,0.03); }
 
-.hero-particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: var(--gold);
-  border-radius: 50%;
-  opacity: 0;
-  animation: float-particle 6s ease-in-out infinite;
-}
-
-@keyframes float-particle {
-  0%, 100% { opacity: 0; transform: translateY(0) scale(1); }
-  50% { opacity: 0.6; transform: translateY(-120px) scale(1.5); }
-}
-
-.hero-grid-line {
-  position: absolute;
-  background: linear-gradient(180deg, transparent, rgba(201,168,76,0.04), transparent);
-  width: 1px;
-  height: 100%;
-  top: 0;
+/* Diagonal gold line */
+.hero-line {
+  position: absolute; top: 0; right: 30%;
+  width: 1px; height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(201,168,76,0.15) 40%, rgba(201,168,76,0.15) 60%, transparent);
+  transform: rotate(8deg); transform-origin: top center;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  max-width: 900px;
+  position: relative; z-index: 2;
+  max-width: 800px; padding-bottom: 40px;
 }
 
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold-dim);
+.hero-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 600; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--gold);
   margin-bottom: 32px;
+  padding-left: 48px; position: relative;
+}
+.hero-label::before {
+  content: ''; position: absolute; left: 0; top: 50%;
+  width: 36px; height: 1px; background: var(--gold);
 }
 
-.hero-eyebrow::before,
-.hero-eyebrow::after {
-  content: '';
-  width: 40px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-dim));
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  font-weight: 800; line-height: 0.95;
+  letter-spacing: -1px;
+  margin-bottom: 36px;
 }
-
-.hero-eyebrow::after {
+.hero h1 span {
+  display: block; color: var(--gold);
+  font-style: italic;
+  position: relative;
+}
+.hero h1 span::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 60%; height: 3px;
   background: linear-gradient(90deg, var(--gold-dim), transparent);
 }
 
-.hero-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(3rem, 9vw, 6.5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: 2px;
-  color: var(--text-primary);
-  margin-bottom: 28px;
-}
-
-.hero-title em {
-  font-style: normal;
-  color: var(--gold);
-  position: relative;
-}
-
-.hero-title em::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  opacity: 0.4;
-}
-
-.hero-description {
-  font-size: clamp(16px, 2vw, 20px);
-  line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 640px;
-  margin: 0 auto 48px;
+.hero-text {
+  font-size: clamp(16px, 2vw, 19px); line-height: 1.8;
+  color: var(--text-2); max-width: 520px;
+  margin-bottom: 48px;
 }
 
 .hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 36px;
-  background: var(--gold);
-  color: var(--dark);
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s;
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px;
+  background: var(--gold); color: var(--obsidian);
+  font-weight: 600; font-size: 13px; letter-spacing: 1.5px;
+  text-transform: uppercase; text-decoration: none;
+  border-radius: 100px; border: none; cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.btn-primary:hover {
+.btn-gold:hover {
   background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(201, 168, 76, 0.25);
+  box-shadow: 0 20px 50px rgba(201,168,76,0.2);
 }
 
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 36px;
-  background: transparent;
-  color: var(--text-primary);
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 6px;
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px;
+  background: transparent; color: var(--text);
+  font-weight: 500; font-size: 13px; letter-spacing: 1.5px;
+  text-transform: uppercase; text-decoration: none;
+  border-radius: 100px; border: 1px solid rgba(255,255,255,0.12);
   transition: all 0.3s;
 }
-
-.btn-secondary:hover {
-  border-color: var(--gold-dim);
-  color: var(--gold);
+.btn-ghost:hover {
+  border-color: var(--gold-dim); color: var(--gold);
 }
 
-.hero-scroll-cue {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-muted);
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  animation: scroll-cue 2s ease-in-out infinite;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--text-3);
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
 }
-
-.hero-scroll-cue .line {
-  width: 1px;
-  height: 40px;
+.hero-scroll::after {
+  content: ''; width: 1px; height: 48px;
   background: linear-gradient(180deg, var(--gold-dim), transparent);
+  animation: pulse-line 2.5s ease-in-out infinite;
+}
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
 }
 
-@keyframes scroll-cue {
-  0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
-  50% { opacity: 0.5; transform: translateX(-50%) translateY(8px); }
-}
-
-/* ── TRUST BAR ── */
-.trust-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(24px, 5vw, 64px);
-  flex-wrap: wrap;
-  padding: 48px clamp(20px, 4vw, 48px);
+/* ── MARQUEE STRIP ── */
+.marquee-strip {
+  padding: 28px 0;
   border-top: 1px solid rgba(201,168,76,0.06);
   border-bottom: 1px solid rgba(201,168,76,0.06);
-  background: rgba(17,17,17,0.5);
+  background: rgba(17,17,19,0.6);
+  overflow: hidden;
+  position: relative;
 }
-
-.trust-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
+.marquee-track {
+  display: flex; gap: 64px; align-items: center;
+  animation: scroll-marquee 20s linear infinite;
+  width: max-content;
 }
-
-.trust-number {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 700;
+.marquee-item {
+  display: flex; align-items: center; gap: 16px;
+  white-space: nowrap;
+}
+.marquee-item .num {
+  font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700;
   color: var(--gold);
 }
-
-.trust-label {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
+.marquee-item .lbl {
+  font-size: 11px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-3);
+}
+.marquee-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--gold-dim); flex-shrink: 0;
+}
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.trust-sep {
-  width: 1px;
-  height: 48px;
-  background: rgba(201,168,76,0.12);
+/* ── SECTION FOUNDATIONS ── */
+.s-pad {
+  padding: clamp(80px, 14vw, 180px) var(--pad-x);
 }
 
-/* ── SECTION COMMON ── */
-.section {
-  padding: var(--section-pad) clamp(20px, 4vw, 48px);
-}
-
-.section-inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
-}
-
-.section-eyebrow {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-
-.section-heading {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--text-primary);
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--gold);
   margin-bottom: 20px;
+  padding-left: 48px; position: relative;
+}
+.eyebrow::before {
+  content: ''; position: absolute; left: 0; top: 50%;
+  width: 36px; height: 1px; background: var(--gold-dim);
 }
 
-.section-subheading {
-  font-size: clamp(16px, 2vw, 18px);
-  line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 600px;
+.big-heading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  font-weight: 700; line-height: 1.1;
+  margin-bottom: 24px;
 }
 
-.section-subheading.centered {
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* ── SERVICES ── */
+/* ── SERVICES — staggered editorial layout ── */
 .services {
-  background: var(--dark);
+  background: var(--obsidian);
   position: relative;
 }
 
-.services::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(201,168,76,0.04), transparent 70%);
-  pointer-events: none;
+.services-intro {
+  max-width: 600px;
+  margin-bottom: clamp(60px, 10vw, 120px);
+}
+.services-intro p {
+  font-size: 17px; line-height: 1.8; color: var(--text-2);
 }
 
-.services-header {
-  text-align: center;
-  margin-bottom: 72px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-
-.service-card {
-  position: relative;
-  padding: clamp(32px, 4vw, 56px);
-  background: var(--dark-card);
-  text-decoration: none;
-  color: inherit;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
-}
-
-.service-card:hover {
-  background: rgba(201, 168, 76, 0.04);
-}
-
-.service-number {
-  font-family: 'Cinzel', serif;
-  font-size: 48px;
-  font-weight: 800;
-  color: rgba(201, 168, 76, 0.08);
-  margin-bottom: 24px;
-  transition: color 0.5s;
-}
-
-.service-card:hover .service-number {
-  color: rgba(201, 168, 76, 0.2);
-}
-
-.service-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 12px;
-  margin-bottom: 24px;
-  color: var(--gold);
-  transition: all 0.3s;
-}
-
-.service-card:hover .service-icon {
-  background: rgba(201,168,76,0.1);
-  border-color: var(--gold);
-}
-
-.service-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 600;
-  color: var(--gold-light);
-  margin-bottom: 16px;
-  letter-spacing: 0.5px;
-}
-
-.service-text {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin-bottom: 28px;
-}
-
-.service-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: var(--gold);
-  text-transform: uppercase;
-  transition: gap 0.3s;
-}
-
-.service-card:hover .service-link {
-  gap: 14px;
-}
-
-/* ── ABOUT / STORY ── */
-.about {
-  background: var(--dark-surface);
-  position: relative;
-  overflow: hidden;
-}
-
-.about::after {
-  content: '';
-  position: absolute;
-  right: -200px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(201,168,76,0.05), transparent 60%);
-  pointer-events: none;
-}
-
-.about-grid {
+.service-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(48px, 8vw, 100px);
-  align-items: center;
-}
-
-.about-visual {
-  position: relative;
-}
-
-.about-image-frame {
-  position: relative;
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  border-radius: 12px;
-  background:
-    linear-gradient(135deg, rgba(201,168,76,0.1), transparent 50%),
-    var(--dark-card);
-}
-
-.about-image-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.7;
-  transition: opacity 0.5s;
-}
-
-.about-image-frame:hover img {
-  opacity: 0.85;
-}
-
-.about-accent-box {
-  position: absolute;
-  bottom: -24px;
-  right: -24px;
-  padding: 28px 32px;
-  background: var(--dark);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 10px;
-  z-index: 2;
-}
-
-.about-accent-number {
-  font-family: 'Cinzel', serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--gold);
-}
-
-.about-accent-label {
-  font-size: 13px;
-  color: var(--text-muted);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.about-content {
-  position: relative;
-  z-index: 2;
-}
-
-.about-values {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.value-item {
-  padding: 20px;
-  border-left: 2px solid var(--gold-dim);
-  transition: border-color 0.3s;
-}
-
-.value-item:hover {
-  border-color: var(--gold);
-}
-
-.value-title {
-  font-family: 'Cinzel', serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--gold-light);
-  margin-bottom: 6px;
-}
-
-.value-text {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--text-muted);
-}
-
-/* ── PROCESS ── */
-.process {
-  background: var(--dark);
-  position: relative;
-}
-
-.process-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  position: relative;
-}
-
-.process-step {
-  text-align: center;
-  padding: clamp(32px, 4vw, 48px) 24px;
-  position: relative;
-  background: var(--dark-card);
-}
-
-.step-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border: 2px solid var(--gold-dim);
-  border-radius: 50%;
-  font-family: 'Cinzel', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 28px;
-  transition: all 0.3s;
-}
-
-.process-step:hover .step-number {
-  background: var(--gold);
-  color: var(--dark);
-  border-color: var(--gold);
-}
-
-.step-title {
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-}
-
-.step-text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-muted);
-}
-
-/* ── PRICING ── */
-.pricing {
-  background: var(--dark-surface);
-}
-
-.pricing-header {
-  text-align: center;
-  margin-bottom: 64px;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.pricing-card {
-  position: relative;
-  padding: clamp(32px, 4vw, 48px);
-  background: var(--dark-card);
-  border: 1px solid rgba(201,168,76,0.1);
-  border-radius: 16px;
-  text-align: center;
-  transition: all 0.4s;
-}
-
-.pricing-card:hover {
-  border-color: var(--gold-dim);
-  transform: translateY(-8px);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.4);
-}
-
-.pricing-card.featured {
-  border-color: var(--gold);
-  background: linear-gradient(180deg, rgba(201,168,76,0.06), var(--dark-card) 40%);
-}
-
-.pricing-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 4px 20px;
-  background: var(--gold);
-  color: var(--dark);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border-radius: 20px;
-}
-
-.pricing-tier {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-
-.pricing-name {
-  font-family: 'Cinzel', serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 20px;
-}
-
-.pricing-amount {
-  font-family: 'Cinzel', serif;
-  font-size: 44px;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 4px;
-}
-
-.pricing-period {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 32px;
-}
-
-.pricing-features {
-  list-style: none;
-  text-align: left;
-  margin-bottom: 32px;
-}
-
-.pricing-features li {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  font-size: 14px;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.pricing-features li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.pricing-cta {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  background: transparent;
-  border: 1px solid var(--gold-dim);
-  border-radius: 8px;
-  color: var(--gold);
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.pricing-cta:hover,
-.pricing-card.featured .pricing-cta {
-  background: var(--gold);
-  color: var(--dark);
-  border-color: var(--gold);
-}
-
-.pricing-card.featured .pricing-cta:hover {
-  background: var(--gold-light);
-}
-
-/* ── TESTIMONIALS ── */
-.testimonials {
-  background: var(--dark);
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonials::before {
-  content: '';
-  position: absolute;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 400px;
-  background: radial-gradient(ellipse, rgba(201,168,76,0.04), transparent 70%);
-  pointer-events: none;
-}
-
-.testimonials-header {
-  text-align: center;
-  margin-bottom: 72px;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.testimonial-card {
-  padding: 40px;
-  background: var(--dark-card);
-  border: 1px solid rgba(201,168,76,0.06);
-  border-radius: 16px;
-  transition: border-color 0.3s;
-}
-
-.testimonial-card:hover {
-  border-color: rgba(201,168,76,0.2);
-}
-
-.testimonial-quote {
-  font-size: 36px;
-  font-family: 'Cinzel', serif;
-  color: var(--gold-dim);
-  line-height: 1;
-  margin-bottom: 16px;
-}
-
-.testimonial-text {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: 28px;
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.testimonial-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
-  display: grid;
-  place-items: center;
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--dark);
-}
-
-.testimonial-name {
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--text-primary);
-}
-
-.testimonial-role {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-/* ── CTA BANNER ── */
-.cta-banner {
-  position: relative;
-  padding: var(--section-pad) clamp(20px, 4vw, 48px);
-  background: linear-gradient(135deg, rgba(201,168,76,0.08), var(--dark-surface));
-  text-align: center;
-  overflow: hidden;
-}
-
-.cta-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(201,168,76,0.06), transparent 40%),
-    radial-gradient(circle at 80% 50%, rgba(201,168,76,0.04), transparent 40%);
-  pointer-events: none;
-}
-
-.cta-inner {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cta-heading {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 20px;
-}
-
-.cta-text {
-  font-size: 17px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 40px;
-}
-
-.cta-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Cinzel', serif;
-  font-size: clamp(20px, 3vw, 28px);
-  font-weight: 700;
-  color: var(--gold);
-  text-decoration: none;
-  margin-top: 24px;
-  transition: color 0.3s;
-}
-
-.cta-phone:hover {
-  color: var(--gold-light);
-}
-
-/* ── FOOTER ── */
-.footer {
-  padding: 80px clamp(20px, 4vw, 48px) 40px;
-  background: #050505;
+  gap: 0;
   border-top: 1px solid rgba(201,168,76,0.08);
 }
 
-.footer-grid {
+.service-item {
+  padding: clamp(40px, 6vw, 72px) clamp(24px, 4vw, 56px);
+  position: relative;
+  text-decoration: none; color: inherit;
+  display: block;
+  transition: background 0.5s;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+.service-item:nth-child(odd) {
+  border-right: 1px solid rgba(201,168,76,0.08);
+}
+/* Offset every other item downward for stagger */
+.service-item:nth-child(2) { transform: translateY(48px); }
+.service-item:nth-child(4) { transform: translateY(48px); }
+.service-item:nth-child(6) { transform: translateY(48px); }
+
+.service-item:hover {
+  background: rgba(201,168,76,0.03);
+}
+
+.service-item::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-item:hover::before { width: 100%; }
+
+.svc-num {
+  font-family: 'Cinzel', serif; font-size: 64px; font-weight: 800;
+  color: rgba(201,168,76,0.06);
+  line-height: 1; margin-bottom: 20px;
+  transition: color 0.4s;
+}
+.service-item:hover .svc-num { color: rgba(201,168,76,0.15); }
+
+.svc-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 600; color: var(--text);
+  margin-bottom: 14px; letter-spacing: 0.3px;
+}
+
+.svc-desc {
+  font-size: 15px; line-height: 1.75; color: var(--text-3);
+  max-width: 380px; margin-bottom: 24px;
+}
+
+.svc-link {
+  font-size: 12px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: gap 0.3s;
+}
+.service-item:hover .svc-link { gap: 16px; }
+
+/* ── DIVIDER — diagonal gold cut ── */
+.diagonal-cut {
+  height: clamp(60px, 10vw, 120px);
+  background: var(--surface);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  margin-top: -1px;
+}
+.diagonal-cut-reverse {
+  height: clamp(60px, 10vw, 120px);
+  background: var(--obsidian);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  margin-bottom: -1px;
+}
+
+/* ── ABOUT — asymmetric two-col ── */
+.about {
+  background: var(--surface);
+  position: relative; overflow: hidden;
+}
+.about::after {
+  content: ''; position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.04);
+  top: -10%; right: -10%;
+  pointer-events: none;
+}
+
+.about-layout {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  max-width: var(--content-max);
-  margin: 0 auto 60px;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(48px, 8vw, 120px);
+  align-items: center;
 }
 
-.footer-brand {
-  font-family: 'Cinzel', serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 16px;
+.about-img-wrap {
+  position: relative;
+}
+.about-img {
+  width: 100%; aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 200px 200px 40px 40px;
+  filter: brightness(0.6) contrast(1.1);
+  transition: filter 0.5s;
+}
+.about-img-wrap:hover .about-img {
+  filter: brightness(0.75) contrast(1.1);
+}
+/* Floating accent */
+.about-badge {
+  position: absolute; bottom: -20px; right: -20px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: grid; place-items: center;
+  text-align: center;
+}
+.about-badge-text {
+  font-family: 'Cinzel', serif; font-weight: 800;
+  font-size: 28px; color: var(--obsidian); line-height: 1.1;
+}
+.about-badge-sub {
+  font-size: 9px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--obsidian); opacity: 0.7;
 }
 
-.footer-tagline {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  max-width: 300px;
-}
-
-.footer-heading {
-  font-family: 'Cinzel', serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold-dim);
+.about-text p {
+  font-size: 17px; line-height: 1.9; color: var(--text-2);
   margin-bottom: 20px;
 }
 
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.values-row {
+  display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap;
+}
+.val {
+  flex: 1; min-width: 140px;
+  padding-left: 20px;
+  border-left: 2px solid var(--gold-dim);
+  transition: border-color 0.3s;
+}
+.val:hover { border-color: var(--gold); }
+.val-title {
+  font-family: 'Cinzel', serif; font-weight: 600;
+  font-size: 15px; color: var(--text); margin-bottom: 4px;
+}
+.val-sub {
+  font-size: 13px; color: var(--text-3); line-height: 1.5;
 }
 
-.footer-links a {
-  font-size: 14px;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.3s;
+/* ── PROCESS — horizontal timeline with circles ── */
+.process {
+  background: var(--obsidian); position: relative;
 }
 
-.footer-links a:hover {
-  color: var(--gold);
+.process-header {
+  max-width: 550px; margin-bottom: clamp(60px, 10vw, 100px);
+}
+.process-header p {
+  font-size: 17px; line-height: 1.8; color: var(--text-2);
 }
 
-.footer-bottom {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-copy {
-  font-size: 12px;
-  color: var(--text-muted);
-  letter-spacing: 1px;
-}
-
-.footer-legal {
-  display: flex;
+.timeline {
+  position: relative;
+  display: flex; justify-content: space-between;
   gap: 24px;
 }
+/* Connecting line */
+.timeline::before {
+  content: ''; position: absolute;
+  top: 32px; left: 32px; right: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-dim), rgba(201,168,76,0.08));
+}
 
-.footer-legal a {
-  font-size: 12px;
-  color: var(--text-muted);
-  text-decoration: none;
+.tl-step {
+  flex: 1; text-align: center;
+  position: relative; z-index: 2;
+}
+
+.tl-circle {
+  width: 64px; height: 64px; margin: 0 auto 28px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-dim);
+  display: grid; place-items: center;
+  font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700;
+  color: var(--gold);
+  background: var(--obsidian);
+  transition: all 0.4s;
+}
+.tl-step:hover .tl-circle {
+  background: var(--gold); color: var(--obsidian); border-color: var(--gold);
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(201,168,76,0.2);
+}
+
+.tl-title {
+  font-family: 'Cinzel', serif; font-size: 17px; font-weight: 600;
+  color: var(--text); margin-bottom: 8px;
+}
+.tl-desc {
+  font-size: 14px; line-height: 1.6; color: var(--text-3);
+  max-width: 200px; margin: 0 auto;
+}
+
+/* ── PRICING — editorial cards with curve tops ── */
+.pricing-section {
+  background: var(--surface); position: relative; overflow: hidden;
+}
+.pricing-section::before {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 50%;
+  background: var(--obsidian);
+}
+
+.pricing-header {
+  text-align: center; margin-bottom: 64px; position: relative; z-index: 2;
+}
+.pricing-header p {
+  font-size: 17px; color: var(--text-2); max-width: 500px; margin: 0 auto;
+}
+
+.pricing-row {
+  display: flex; gap: 24px; justify-content: center;
+  position: relative; z-index: 2; flex-wrap: wrap;
+}
+
+.price-card {
+  flex: 1; max-width: 360px; min-width: 280px;
+  background: var(--surface-2);
+  border-radius: 32px;
+  padding: clamp(36px, 4vw, 52px);
+  position: relative;
+  border: 1px solid rgba(201,168,76,0.06);
+  transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+.price-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201,168,76,0.15);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+}
+
+.price-card.highlight {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(201,168,76,0.08), var(--surface-2) 50%);
+}
+.price-card.highlight::before {
+  content: 'Popular';
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  padding: 6px 24px; background: var(--gold); color: var(--obsidian);
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; border-radius: 100px;
+}
+
+.pc-tier {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+}
+.pc-name {
+  font-family: 'Cinzel', serif; font-size: 20px; font-weight: 600;
+  color: var(--text); margin-bottom: 24px;
+}
+.pc-price {
+  font-family: 'Cinzel', serif; font-size: 48px; font-weight: 700;
+  color: var(--gold); line-height: 1; margin-bottom: 4px;
+}
+.pc-note {
+  font-size: 13px; color: var(--text-3); margin-bottom: 32px;
+}
+
+.pc-list {
+  list-style: none; margin-bottom: 36px;
+}
+.pc-list li {
+  padding: 12px 0;
+  font-size: 14px; color: var(--text-2);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  display: flex; align-items: center; gap: 12px;
+}
+.pc-list li::before {
+  content: ''; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--gold);
+  flex-shrink: 0;
+}
+
+.pc-btn {
+  display: block; width: 100%; text-align: center;
+  padding: 16px; border-radius: 100px;
+  font-weight: 600; font-size: 13px; letter-spacing: 1px;
+  text-transform: uppercase; text-decoration: none;
+  transition: all 0.3s;
+}
+.pc-btn-outline {
+  border: 1px solid var(--gold-dim); color: var(--gold); background: transparent;
+}
+.pc-btn-outline:hover {
+  background: var(--gold); color: var(--obsidian); border-color: var(--gold);
+}
+.pc-btn-solid {
+  background: var(--gold); color: var(--obsidian); border: 1px solid var(--gold);
+}
+.pc-btn-solid:hover {
+  background: var(--gold-light);
+}
+
+/* ── TESTIMONIALS — big quote, editorial ── */
+.quotes-section {
+  background: var(--obsidian); position: relative;
+}
+
+.quotes-header {
+  text-align: center; margin-bottom: 72px;
+}
+
+.quotes-carousel {
+  max-width: 800px; margin: 0 auto; text-align: center;
+  position: relative;
+}
+.quote-slide {
+  display: none;
+}
+.quote-slide.active { display: block; }
+
+.q-mark {
+  font-family: 'Cinzel', serif; font-size: 120px; font-weight: 800;
+  color: rgba(201,168,76,0.1); line-height: 0.6; margin-bottom: 16px;
+}
+.q-text {
+  font-size: clamp(20px, 3vw, 28px); line-height: 1.6;
+  color: var(--text); font-style: italic;
+  margin-bottom: 36px; max-width: 640px; margin-left: auto; margin-right: auto;
+}
+.q-author {
+  display: flex; align-items: center; gap: 16px;
+  justify-content: center;
+}
+.q-avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  display: grid; place-items: center;
+  font-family: 'Cinzel', serif; font-weight: 700; font-size: 18px;
+  color: var(--obsidian);
+}
+.q-name { font-weight: 600; font-size: 15px; }
+.q-role { font-size: 13px; color: var(--text-3); }
+
+.q-dots {
+  display: flex; gap: 10px; justify-content: center; margin-top: 48px;
+}
+.q-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 1px solid var(--gold-dim); background: transparent;
+  cursor: pointer; transition: all 0.3s; padding: 0;
+}
+.q-dot.active { background: var(--gold); border-color: var(--gold); }
+
+/* ── CTA ── */
+.cta {
+  position: relative; overflow: hidden;
+  text-align: center;
+  padding: clamp(100px, 16vw, 200px) var(--pad-x);
+  background: var(--surface);
+}
+.cta::before {
+  content: ''; position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%; border: 1px solid rgba(201,168,76,0.06);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.cta::after {
+  content: ''; position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%; border: 1px solid rgba(201,168,76,0.04);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cta-inner { position: relative; z-index: 2; }
+
+.cta .big-heading { margin-bottom: 20px; }
+.cta p {
+  font-size: 17px; color: var(--text-2); line-height: 1.8;
+  max-width: 520px; margin: 0 auto 40px;
+}
+.cta-phone {
+  display: block; margin-top: 28px;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(24px, 4vw, 36px); font-weight: 700;
+  color: var(--gold); text-decoration: none;
   transition: color 0.3s;
 }
+.cta-phone:hover { color: var(--gold-light); }
 
-.footer-legal a:hover {
-  color: var(--gold-dim);
+/* ── FOOTER ── */
+footer {
+  padding: 80px var(--pad-x) 40px;
+  background: #050507;
+  border-top: 1px solid rgba(201,168,76,0.06);
 }
+
+.foot-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  max-width: 1200px; margin: 0 auto 60px;
+}
+
+.foot-brand {
+  font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+}
+.foot-tagline {
+  font-size: 14px; color: var(--text-3); line-height: 1.7;
+  max-width: 280px;
+}
+
+.foot-heading {
+  font-family: 'Cinzel', serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold-dim); margin-bottom: 20px;
+}
+.foot-links { list-style: none; }
+.foot-links li { margin-bottom: 12px; }
+.foot-links a {
+  font-size: 14px; color: var(--text-2); text-decoration: none;
+  transition: color 0.3s;
+}
+.foot-links a:hover { color: var(--gold); }
+
+.foot-bottom {
+  max-width: 1200px; margin: 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.foot-copy {
+  font-size: 12px; color: var(--text-3); letter-spacing: 1px;
+}
+.foot-legal { display: flex; gap: 24px; }
+.foot-legal a {
+  font-size: 12px; color: var(--text-3); text-decoration: none;
+  transition: color 0.3s;
+}
+.foot-legal a:hover { color: var(--gold-dim); }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .services-grid { grid-template-columns: 1fr 1fr; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+@media (max-width: 900px) {
+  .service-row { grid-template-columns: 1fr; }
+  .service-item:nth-child(odd) { border-right: none; }
+  .service-item:nth-child(2),
+  .service-item:nth-child(4),
+  .service-item:nth-child(6) { transform: none; }
+  .about-layout { grid-template-columns: 1fr; }
+  .about-img-wrap { max-width: 400px; }
+  .timeline { flex-direction: column; align-items: center; }
+  .timeline::before { display: none; }
+  .pricing-row { flex-direction: column; align-items: center; }
+  .foot-top { grid-template-columns: 1fr 1fr; }
 }
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-mobile-toggle { display: block; }
-
-  .services-grid { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-visual { order: -1; }
-  .about-values { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-
-  .trust-sep { display: none; }
-  .trust-bar { gap: 32px; }
-}
-
-@media (max-width: 480px) {
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn-primary,
-  .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+@media (max-width: 600px) {
+  .foot-top { grid-template-columns: 1fr; }
+  .foot-bottom { flex-direction: column; text-align: center; }
+  .hero { align-items: center; text-align: center; padding-bottom: 15vh; }
+  .hero-label { padding-left: 0; }
+  .hero-label::before { display: none; }
+  .hero-text { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .eyebrow { padding-left: 0; }
+  .eyebrow::before { display: none; }
+  .values-row { flex-direction: column; }
 }
 </style>
 </head>
 <body>
 
-<!-- ── NAVIGATION ── -->
-<nav class="nav" id="nav">
-  <a href="/" class="nav-brand">Stonevell</a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#testimonials">Clients</a></li>
-  </ul>
-  <a href="tel:7754843804" class="nav-cta">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.55 5.55l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-    775-484-3804
-  </a>
-  <button class="nav-mobile-toggle" aria-label="Menu" id="navToggle">
-    <span></span><span></span><span></span>
-  </button>
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo">Stonevell</a>
+  <div class="nav-right">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#pricing">Pricing</a>
+    <a href="tel:7754843804" class="nav-phone">775-484-3804</a>
+  </div>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-particles" id="particles"></div>
-  <!-- Subtle grid lines -->
-  <div class="hero-grid-line" style="left: 20%; opacity: 0.5;"></div>
-  <div class="hero-grid-line" style="left: 40%; opacity: 0.3;"></div>
-  <div class="hero-grid-line" style="left: 60%; opacity: 0.3;"></div>
-  <div class="hero-grid-line" style="left: 80%; opacity: 0.5;"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-line"></div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow reveal">Reno & Northern Nevada</div>
-    <h1 class="hero-title reveal reveal-delay-1">Your<br><em>Digital Fortress</em></h1>
-    <p class="hero-description reveal reveal-delay-2">
-      Same-day device repair. AI-powered automation. Cybersecurity that never sleeps.
-      We build, protect, and scale the technology behind Northern Nevada's businesses.
-    </p>
-    <div class="hero-actions reveal reveal-delay-3">
-      <a href="tel:7754843804" class="btn-primary">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.55 5.55l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-        Call Now
-      </a>
-      <a href="#services" class="btn-secondary">Explore Services</a>
+    <div class="hero-label" data-reveal>Reno & Northern Nevada</div>
+    <h1 data-reveal="2">Your<br><span>Digital Fortress</span></h1>
+    <p class="hero-text" data-reveal="3">Same-day device repair. AI-powered automation. Cybersecurity that never sleeps. We build and protect the technology behind Northern Nevada's businesses.</p>
+    <div class="hero-actions" data-reveal="4">
+      <a href="tel:7754843804" class="btn-gold">Call Now</a>
+      <a href="#services" class="btn-ghost">See What We Do</a>
     </div>
   </div>
 
-  <div class="hero-scroll-cue">
-    <span>Scroll</span>
-    <div class="line"></div>
-  </div>
+  <div class="hero-scroll">Scroll<span></span></div>
 </section>
 
-<!-- ── TRUST BAR ── -->
-<div class="trust-bar reveal">
-  <div class="trust-item">
-    <div class="trust-number">500+</div>
-    <div class="trust-label">Devices Repaired</div>
-  </div>
-  <div class="trust-sep"></div>
-  <div class="trust-item">
-    <div class="trust-number">Same Day</div>
-    <div class="trust-label">Most Repairs</div>
-  </div>
-  <div class="trust-sep"></div>
-  <div class="trust-item">
-    <div class="trust-number">$0</div>
-    <div class="trust-label">Diagnostics</div>
-  </div>
-  <div class="trust-sep"></div>
-  <div class="trust-item">
-    <div class="trust-number">24/7</div>
-    <div class="trust-label">AI Monitoring</div>
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="num">500+</span><span class="lbl">Devices Fixed</span></div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span class="num">Same Day</span><span class="lbl">Most Repairs</span></div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span class="num">$0</span><span class="lbl">Diagnostics</span></div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span class="num">24/7</span><span class="lbl">Monitoring</span></div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span class="num">No</span><span class="lbl">Contracts Ever</span></div>
+    <div class="marquee-dot"></div>
+    <!-- duplicate for seamless loop -->
+    <div class="marquee-item"><span class="num">500+</span><span class="lbl">Devices Fixed</span></div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span class="num">Same Day</span><span class="lbl">Most Repairs</span></div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span class="num">$0</span><span class="lbl">Diagnostics</span></div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span class="num">24/7</span><span class="lbl">Monitoring</span></div>
+    <div class="marquee-dot"></div>
+    <div class="marquee-item"><span class="num">No</span><span class="lbl">Contracts Ever</span></div>
+    <div class="marquee-dot"></div>
   </div>
 </div>
 
-<!-- ── SERVICES ── -->
-<section class="section services" id="services">
-  <div class="section-inner">
-    <div class="services-header">
-      <div class="section-eyebrow reveal">What We Do</div>
-      <h2 class="section-heading reveal reveal-delay-1">Full-Stack Technology<br>Under One Roof</h2>
-      <p class="section-subheading centered reveal reveal-delay-2">From cracked screens to autonomous AI systems. We handle the spectrum so you can focus on your business.</p>
-    </div>
+<!-- SERVICES -->
+<section class="services s-pad" id="services">
+  <div class="services-intro">
+    <div class="eyebrow" data-reveal>What We Do</div>
+    <h2 class="big-heading" data-reveal="2">Full-stack technology.<br>One phone call.</h2>
+    <p data-reveal="3">From cracked screens to autonomous AI systems. We handle the entire spectrum so you focus on running your business.</p>
+  </div>
 
-    <div class="services-grid">
-      <a href="/repair.html" class="service-card reveal">
-        <div class="service-number">01</div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        </div>
-        <h3 class="service-title">Device Repair &<br>Remote Support</h3>
-        <p class="service-text">Fast, honest diagnostics for laptops, desktops, and mobile devices. Same-day service across Reno, Sparks & Carson City. Free diagnosis, most repairs $50-$150.</p>
-        <span class="service-link">Fix My Device <span>&#8594;</span></span>
-      </a>
-
-      <a href="/automation.html" class="service-card reveal reveal-delay-1">
-        <div class="service-number">02</div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        </div>
-        <h3 class="service-title">AI Automation &<br>Business Systems</h3>
-        <p class="service-text">Custom autonomous systems that eliminate busywork, capture leads, and scale your operations. Powered by The Valhalla System. From $499/mo, no long-term contracts.</p>
-        <span class="service-link">Explore Solutions <span>&#8594;</span></span>
-      </a>
-
-      <a href="/cybersecurity.html" class="service-card reveal reveal-delay-2">
-        <div class="service-number">03</div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="service-title">Cybersecurity &<br>Threat Protection</h3>
-        <p class="service-text">Network hardening, endpoint protection, threat monitoring, and incident response. We keep your business safe from ransomware, phishing, and data breaches.</p>
-        <span class="service-link">Secure My Business <span>&#8594;</span></span>
-      </a>
-
-      <a href="/managed-it.html" class="service-card reveal">
-        <div class="service-number">04</div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <h3 class="service-title">Managed IT &<br>Cloud Services</h3>
-        <p class="service-text">Microsoft 365, SharePoint, Teams, and cloud infrastructure managed end-to-end. We become your outsourced IT department at a fraction of the cost.</p>
-        <span class="service-link">Learn More <span>&#8594;</span></span>
-      </a>
-
-      <a href="/edgeintel.html" class="service-card reveal reveal-delay-1">
-        <div class="service-number">05</div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h3 class="service-title">EdgeIntel<br>AI Monitoring</h3>
-        <p class="service-text">Real-time edge monitoring, anomaly detection, device health, and multi-cloud operations for distributed systems. Predictive alerts before problems hit.</p>
-        <span class="service-link">Open EdgeIntel <span>&#8594;</span></span>
-      </a>
-
-      <a href="/web-presence.html" class="service-card reveal reveal-delay-2">
-        <div class="service-number">06</div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
-        </div>
-        <h3 class="service-title">Web Design &<br>Digital Presence</h3>
-        <p class="service-text">High-performance websites, SEO, and digital strategy that actually converts. We build sites that work as hard as you do. Not template junk.</p>
-        <span class="service-link">See Our Work <span>&#8594;</span></span>
-      </a>
-    </div>
+  <div class="service-row">
+    <a href="/repair.html" class="service-item" data-reveal>
+      <div class="svc-num">01</div>
+      <div class="svc-title">Device Repair & Remote Support</div>
+      <div class="svc-desc">Laptops, desktops, phones. Same-day across Reno, Sparks & Carson City. Free diagnosis, most repairs $50-$150.</div>
+      <span class="svc-link">Fix my device &#8594;</span>
+    </a>
+    <a href="/automation.html" class="service-item" data-reveal="2">
+      <div class="svc-num">02</div>
+      <div class="svc-title">AI Automation & Business Systems</div>
+      <div class="svc-desc">Autonomous systems that eliminate busywork, capture leads, and scale operations. Powered by The Valhalla System.</div>
+      <span class="svc-link">Explore solutions &#8594;</span>
+    </a>
+    <a href="/cybersecurity.html" class="service-item" data-reveal>
+      <div class="svc-num">03</div>
+      <div class="svc-title">Cybersecurity & Threat Protection</div>
+      <div class="svc-desc">Network hardening, endpoint protection, monitoring, incident response. We keep ransomware and phishing out.</div>
+      <span class="svc-link">Secure my business &#8594;</span>
+    </a>
+    <a href="/managed-it.html" class="service-item" data-reveal="2">
+      <div class="svc-num">04</div>
+      <div class="svc-title">Managed IT & Cloud</div>
+      <div class="svc-desc">Microsoft 365, SharePoint, Teams, cloud infrastructure. Your outsourced IT department at a fraction of the cost.</div>
+      <span class="svc-link">Learn more &#8594;</span>
+    </a>
+    <a href="/edgeintel.html" class="service-item" data-reveal>
+      <div class="svc-num">05</div>
+      <div class="svc-title">EdgeIntel AI Monitoring</div>
+      <div class="svc-desc">Real-time anomaly detection, device health, multi-cloud ops. Predictive alerts before problems hit.</div>
+      <span class="svc-link">Open EdgeIntel &#8594;</span>
+    </a>
+    <a href="/web-presence.html" class="service-item" data-reveal="2">
+      <div class="svc-num">06</div>
+      <div class="svc-title">Web Design & Digital Presence</div>
+      <div class="svc-desc">High-performance sites, SEO, and digital strategy that converts. Not template junk. Sites that work as hard as you do.</div>
+      <span class="svc-link">See our work &#8594;</span>
+    </a>
   </div>
 </section>
 
-<!-- ── ABOUT ── -->
-<section class="section about" id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-visual reveal">
-        <div class="about-image-frame">
-          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="Fortress architecture" loading="lazy" width="640" height="800">
-        </div>
-        <div class="about-accent-box">
-          <div class="about-accent-number">100%</div>
-          <div class="about-accent-label">No-Contract Model</div>
+<!-- DIAGONAL CUT -->
+<div class="diagonal-cut"></div>
+
+<!-- ABOUT -->
+<section class="about s-pad" id="about">
+  <div class="about-layout" style="max-width:1200px;margin:0 auto;">
+    <div class="about-img-wrap" data-reveal>
+      <img class="about-img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="Fortress" loading="lazy" width="640" height="853">
+      <div class="about-badge">
+        <div>
+          <div class="about-badge-text">$0</div>
+          <div class="about-badge-sub">Contracts</div>
         </div>
       </div>
-
-      <div class="about-content">
-        <div class="section-eyebrow reveal">Who We Are</div>
-        <h2 class="section-heading reveal reveal-delay-1">Built Different.<br>On Purpose.</h2>
-        <p class="section-subheading reveal reveal-delay-2">
-          Stonevell isn't a big-box IT shop. We're a focused operation out of Reno, NV that combines hands-on repair with enterprise-grade AI and cybersecurity. No contracts, no runaround, no upselling you things you don't need.
-        </p>
-
-        <div class="about-values reveal reveal-delay-3">
-          <div class="value-item">
-            <div class="value-title">No Contracts</div>
-            <div class="value-text">We earn your business every month. Stay because it works.</div>
-          </div>
-          <div class="value-item">
-            <div class="value-title">Same Day</div>
-            <div class="value-text">Most repairs done the day you call. No week-long waits.</div>
-          </div>
-          <div class="value-item">
-            <div class="value-title">Free Diagnosis</div>
-            <div class="value-text">We tell you what's wrong before you spend a dime.</div>
-          </div>
-          <div class="value-item">
-            <div class="value-title">AI-Native</div>
-            <div class="value-text">We don't just fix computers. We automate businesses.</div>
-          </div>
+    </div>
+    <div class="about-text">
+      <div class="eyebrow" data-reveal>Who We Are</div>
+      <h2 class="big-heading" data-reveal="2">Built different.<br>On purpose.</h2>
+      <p data-reveal="3">Stonevell isn't a big-box IT shop. We're a focused operation out of Reno that combines hands-on repair with enterprise-grade AI and cybersecurity.</p>
+      <p data-reveal="3">No contracts. No runaround. No upselling you things you don't need. We earn your business every single month.</p>
+      <div class="values-row" data-reveal="4">
+        <div class="val">
+          <div class="val-title">Same Day</div>
+          <div class="val-sub">Most repairs done the day you call.</div>
+        </div>
+        <div class="val">
+          <div class="val-title">Free Diagnosis</div>
+          <div class="val-sub">Know what's wrong before spending a dime.</div>
+        </div>
+        <div class="val">
+          <div class="val-title">AI-Native</div>
+          <div class="val-sub">We don't just fix computers. We automate businesses.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PROCESS ── -->
-<section class="section process" id="process">
-  <div class="section-inner">
-    <div class="process-header">
-      <div class="section-eyebrow reveal">How It Works</div>
-      <h2 class="section-heading reveal reveal-delay-1">Four Steps to<br>Bulletproof Tech</h2>
-      <p class="section-subheading centered reveal reveal-delay-2">Whether it's a broken laptop or a full automation build, the process is the same: fast, transparent, done right.</p>
-    </div>
+<!-- DIAGONAL CUT REVERSE -->
+<div class="diagonal-cut-reverse"></div>
 
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="step-number">1</div>
-        <h3 class="step-title">Reach Out</h3>
-        <p class="step-text">Call, text, or book online. Tell us what's broken or what you need built. No hold music, no ticket systems.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-1">
-        <div class="step-number">2</div>
-        <h3 class="step-title">Free Diagnosis</h3>
-        <p class="step-text">We assess the problem and give you an honest quote. No surprise fees. You approve before we touch anything.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="step-number">3</div>
-        <h3 class="step-title">We Execute</h3>
-        <p class="step-text">Same-day for repairs. 1-2 weeks for automation builds. You get updates throughout, not silence.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="step-number">4</div>
-        <h3 class="step-title">Ongoing Support</h3>
-        <p class="step-text">We don't disappear after the invoice. Managed IT clients get proactive monitoring and real human support.</p>
-      </div>
+<!-- PROCESS -->
+<section class="process s-pad" id="process">
+  <div class="process-header">
+    <div class="eyebrow" data-reveal>How It Works</div>
+    <h2 class="big-heading" data-reveal="2">Four steps.<br>Bulletproof tech.</h2>
+    <p data-reveal="3">Whether it's a broken laptop or a full automation build, the process is fast, transparent, and done right.</p>
+  </div>
+
+  <div class="timeline" data-reveal>
+    <div class="tl-step">
+      <div class="tl-circle">1</div>
+      <div class="tl-title">Reach Out</div>
+      <div class="tl-desc">Call, text, or book online. No hold music.</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle">2</div>
+      <div class="tl-title">Free Diagnosis</div>
+      <div class="tl-desc">Honest quote. You approve before we start.</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle">3</div>
+      <div class="tl-title">We Execute</div>
+      <div class="tl-desc">Same-day repairs. Updates throughout.</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-circle">4</div>
+      <div class="tl-title">Ongoing Support</div>
+      <div class="tl-desc">We don't disappear after the invoice.</div>
     </div>
   </div>
 </section>
 
-<!-- ── PRICING ── -->
-<section class="section pricing" id="pricing">
-  <div class="section-inner">
-    <div class="pricing-header">
-      <div class="section-eyebrow reveal">Transparent Pricing</div>
-      <h2 class="section-heading reveal reveal-delay-1">No Surprises.<br>No Hidden Fees.</h2>
-      <p class="section-subheading centered reveal reveal-delay-2">Clear pricing for every tier. Pay for what you need, nothing more.</p>
+<!-- PRICING -->
+<section class="pricing-section s-pad" id="pricing">
+  <div class="pricing-header">
+    <div class="eyebrow" data-reveal style="padding-left:0;"><span style="display:none;"></span>Transparent Pricing</div>
+    <h2 class="big-heading" data-reveal="2">No surprises.<br>No hidden fees.</h2>
+    <p data-reveal="3">Clear pricing for every tier. Pay for what you need.</p>
+  </div>
+
+  <div class="pricing-row">
+    <div class="price-card" data-reveal>
+      <div class="pc-tier">Tier 1</div>
+      <div class="pc-name">Device Repair</div>
+      <div class="pc-price">$69+</div>
+      <div class="pc-note">Per repair, starting price</div>
+      <ul class="pc-list">
+        <li>Free diagnostics</li>
+        <li>Same-day most repairs</li>
+        <li>Virus removal $89</li>
+        <li>Standard repair $99-$149</li>
+        <li>Remote tune-up $69</li>
+      </ul>
+      <a href="tel:7754843804" class="pc-btn pc-btn-outline">Call for Quote</a>
     </div>
 
-    <div class="pricing-grid">
-      <div class="pricing-card reveal">
-        <div class="pricing-tier">Tier 1</div>
-        <div class="pricing-name">Device Repair</div>
-        <div class="pricing-amount">$69</div>
-        <div class="pricing-period">Starting price per repair</div>
-        <ul class="pricing-features">
-          <li>Free diagnostics</li>
-          <li>Same-day most repairs</li>
-          <li>Virus removal $89</li>
-          <li>Standard repair $99-$149</li>
-          <li>Remote tune-up $69</li>
-          <li>Data recovery available</li>
-        </ul>
-        <a href="tel:7754843804" class="pricing-cta">Call for Quote</a>
-      </div>
+    <div class="price-card highlight" data-reveal="2">
+      <div class="pc-tier">Tier 2</div>
+      <div class="pc-name">Managed IT</div>
+      <div class="pc-price">$299</div>
+      <div class="pc-note">Monthly / no contract</div>
+      <ul class="pc-list">
+        <li>Microsoft 365 management</li>
+        <li>Cybersecurity monitoring</li>
+        <li>Help desk support</li>
+        <li>Cloud backup & recovery</li>
+        <li>Monthly health reports</li>
+      </ul>
+      <a href="tel:7754843804" class="pc-btn pc-btn-solid">Get Started</a>
+    </div>
 
-      <div class="pricing-card featured reveal reveal-delay-1">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier">Tier 2</div>
-        <div class="pricing-name">Managed IT</div>
-        <div class="pricing-amount">$299</div>
-        <div class="pricing-period">Per month / no contract</div>
-        <ul class="pricing-features">
-          <li>Microsoft 365 management</li>
-          <li>Cybersecurity monitoring</li>
-          <li>Help desk support</li>
-          <li>Cloud backup & recovery</li>
-          <li>Proactive maintenance</li>
-          <li>Monthly health reports</li>
-        </ul>
-        <a href="tel:7754843804" class="pricing-cta">Get Started</a>
-      </div>
-
-      <div class="pricing-card reveal reveal-delay-2">
-        <div class="pricing-tier">Tier 3</div>
-        <div class="pricing-name">AI Automation</div>
-        <div class="pricing-amount">$499</div>
-        <div class="pricing-period">Per month / no contract</div>
-        <ul class="pricing-features">
-          <li>Custom AI workflows</li>
-          <li>Lead capture automation</li>
-          <li>The Valhalla System</li>
-          <li>Business process mapping</li>
-          <li>Integration with your stack</li>
-          <li>Dedicated automation engineer</li>
-        </ul>
-        <a href="tel:7754843804" class="pricing-cta">Book a Call</a>
-      </div>
+    <div class="price-card" data-reveal="3">
+      <div class="pc-tier">Tier 3</div>
+      <div class="pc-name">AI Automation</div>
+      <div class="pc-price">$499</div>
+      <div class="pc-note">Monthly / no contract</div>
+      <ul class="pc-list">
+        <li>Custom AI workflows</li>
+        <li>Lead capture automation</li>
+        <li>The Valhalla System</li>
+        <li>Process mapping</li>
+        <li>Dedicated engineer</li>
+      </ul>
+      <a href="tel:7754843804" class="pc-btn pc-btn-outline">Book a Call</a>
     </div>
   </div>
 </section>
 
-<!-- ── TESTIMONIALS ── -->
-<section class="section testimonials" id="testimonials">
-  <div class="section-inner">
-    <div class="testimonials-header">
-      <div class="section-eyebrow reveal">What Clients Say</div>
-      <h2 class="section-heading reveal reveal-delay-1">Trusted by Businesses<br>Across Northern Nevada</h2>
-    </div>
+<!-- TESTIMONIALS -->
+<section class="quotes-section s-pad" id="quotes">
+  <div class="quotes-header">
+    <div class="eyebrow" data-reveal style="padding-left:0;">Client Stories</div>
+    <h2 class="big-heading" data-reveal="2">Trusted across<br>Northern Nevada</h2>
+  </div>
 
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Called at 9am with a dead laptop. Mike had it diagnosed in 20 minutes, fixed by lunch. No one else in Reno moves that fast.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">JR</div>
-          <div>
-            <div class="testimonial-name">Jason R.</div>
-            <div class="testimonial-role">Small Business Owner, Sparks</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card reveal reveal-delay-1">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">The AI automation Stonevell built saves us 15 hours a week on lead follow-up. It paid for itself in the first month. No exaggeration.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">KL</div>
-          <div>
-            <div class="testimonial-name">Karen L.</div>
-            <div class="testimonial-role">Operations Manager, Reno</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card reveal reveal-delay-2">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">We switched from a big MSP to Stonevell. Better service, faster response, half the price. And no 3-year contract holding us hostage.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">DM</div>
-          <div>
-            <div class="testimonial-name">David M.</div>
-            <div class="testimonial-role">CEO, Carson City</div>
-          </div>
+  <div class="quotes-carousel" data-reveal>
+    <div class="quote-slide active">
+      <div class="q-mark">&ldquo;</div>
+      <p class="q-text">Called at 9am with a dead laptop. Mike had it diagnosed in 20 minutes, fixed by lunch. No one else in Reno moves that fast.</p>
+      <div class="q-author">
+        <div class="q-avatar">JR</div>
+        <div style="text-align:left;">
+          <div class="q-name">Jason R.</div>
+          <div class="q-role">Small Business Owner, Sparks</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ── CTA BANNER ── -->
-<section class="cta-banner">
-  <div class="cta-inner reveal">
-    <h2 class="cta-heading">Ready to Fortify<br>Your Business?</h2>
-    <p class="cta-text">No contracts. No runaround. Just results. Call or text us right now and we'll get started today.</p>
-    <div class="hero-actions">
-      <a href="tel:7754843804" class="btn-primary">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.55 5.55l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
-        Call 775-484-3804
-      </a>
-      <a href="sms:7754843804" class="btn-secondary">Text Us Instead</a>
+    <div class="quote-slide">
+      <div class="q-mark">&ldquo;</div>
+      <p class="q-text">The AI automation saves us 15 hours a week on lead follow-up. It paid for itself in the first month. No exaggeration.</p>
+      <div class="q-author">
+        <div class="q-avatar">KL</div>
+        <div style="text-align:left;">
+          <div class="q-name">Karen L.</div>
+          <div class="q-role">Operations Manager, Reno</div>
+        </div>
+      </div>
     </div>
-    <a href="tel:7754843804" class="cta-phone">775-484-3804</a>
+    <div class="quote-slide">
+      <div class="q-mark">&ldquo;</div>
+      <p class="q-text">We switched from a big MSP to Stonevell. Better service, faster response, half the price. And no 3-year contract holding us hostage.</p>
+      <div class="q-author">
+        <div class="q-avatar">DM</div>
+        <div style="text-align:left;">
+          <div class="q-name">David M.</div>
+          <div class="q-role">CEO, Carson City</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-dots">
+      <button class="q-dot active" data-slide="0" aria-label="Quote 1"></button>
+      <button class="q-dot" data-slide="1" aria-label="Quote 2"></button>
+      <button class="q-dot" data-slide="2" aria-label="Quote 3"></button>
+    </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
-<footer class="footer">
-  <div class="footer-grid">
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="eyebrow" data-reveal style="padding-left:0;">Ready?</div>
+    <h2 class="big-heading" data-reveal="2">Fortify your business.<br>Start today.</h2>
+    <p data-reveal="3">No contracts. No runaround. Just results. Call or text right now.</p>
+    <div class="hero-actions" data-reveal="4" style="justify-content:center;">
+      <a href="tel:7754843804" class="btn-gold">Call 775-484-3804</a>
+      <a href="sms:7754843804" class="btn-ghost">Text Us</a>
+    </div>
+    <a href="tel:7754843804" class="cta-phone" data-reveal="4">775-484-3804</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
     <div>
-      <div class="footer-brand">Stonevell</div>
-      <p class="footer-tagline">Your Digital Fortress. Same-day repair, cybersecurity, managed IT, and AI automation for Reno, Sparks, and Northern Nevada.</p>
+      <div class="foot-brand">Stonevell</div>
+      <p class="foot-tagline">Your Digital Fortress. Same-day repair, cybersecurity, managed IT, and AI automation for Northern Nevada.</p>
     </div>
     <div>
-      <div class="footer-heading">Services</div>
-      <ul class="footer-links">
+      <div class="foot-heading">Services</div>
+      <ul class="foot-links">
         <li><a href="/repair.html">Device Repair</a></li>
         <li><a href="/virus-removal.html">Virus Removal</a></li>
         <li><a href="/data-recovery.html">Data Recovery</a></li>
@@ -1589,18 +1145,17 @@ body {
       </ul>
     </div>
     <div>
-      <div class="footer-heading">Solutions</div>
-      <ul class="footer-links">
+      <div class="foot-heading">Solutions</div>
+      <ul class="foot-links">
         <li><a href="/automation.html">AI Automation</a></li>
         <li><a href="/edgeintel.html">EdgeIntel</a></li>
         <li><a href="/web-presence.html">Web Design</a></li>
         <li><a href="/small-business-it.html">Small Business IT</a></li>
-        <li><a href="/hard-knocks-arena.html">Hard Knocks Arena</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-heading">Contact</div>
-      <ul class="footer-links">
+      <div class="foot-heading">Contact</div>
+      <ul class="foot-links">
         <li><a href="tel:7754843804">775-484-3804</a></li>
         <li><a href="sms:7754843804">Text Us</a></li>
         <li><a href="mailto:hello@stonevell.com">hello@stonevell.com</a></li>
@@ -1609,87 +1164,49 @@ body {
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">&copy; 2025 Stonevell. All rights reserved.</div>
-    <div class="footer-legal">
-      <a href="/privacy-policy.html">Privacy Policy</a>
+  <div class="foot-bottom">
+    <div class="foot-copy">&copy; 2025 Stonevell. All rights reserved.</div>
+    <div class="foot-legal">
+      <a href="/privacy-policy.html">Privacy</a>
       <a href="/sitemap.xml">Sitemap</a>
     </div>
   </div>
 </footer>
 
 <script>
-/* ── Scroll Reveal ── */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+// Reveals
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => ro.observe(el));
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-/* ── Nav scroll effect ── */
-const nav = document.getElementById('nav');
-let lastScroll = 0;
+// Nav scroll
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
 }, { passive: true });
 
-/* ── Particles ── */
-const particleContainer = document.getElementById('particles');
-for (let i = 0; i < 30; i++) {
-  const p = document.createElement('div');
-  p.className = 'hero-particle';
-  p.style.left = Math.random() * 100 + '%';
-  p.style.top = (40 + Math.random() * 60) + '%';
-  p.style.animationDelay = Math.random() * 6 + 's';
-  p.style.animationDuration = (4 + Math.random() * 4) + 's';
-  particleContainer.appendChild(p);
-}
-
-/* ── Smooth scroll for nav links ── */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
     e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-/* ── Trust bar counter animation ── */
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const counters = entry.target.querySelectorAll('.trust-number');
-      counters.forEach(counter => {
-        const text = counter.textContent;
-        if (/^\d/.test(text)) {
-          const num = parseInt(text);
-          const suffix = text.replace(/[\d,]/g, '');
-          let current = 0;
-          const step = Math.ceil(num / 40);
-          const timer = setInterval(() => {
-            current += step;
-            if (current >= num) {
-              counter.textContent = text;
-              clearInterval(timer);
-            } else {
-              counter.textContent = current + suffix;
-            }
-          }, 30);
-        }
-      });
-      counterObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.trust-bar').forEach(el => counterObserver.observe(el));
+// Quote carousel
+const slides = document.querySelectorAll('.quote-slide');
+const dots = document.querySelectorAll('.q-dot');
+let current = 0;
+function showSlide(n) {
+  slides.forEach(s => s.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+  slides[n].classList.add('active');
+  dots[n].classList.add('active');
+  current = n;
+}
+dots.forEach(d => d.addEventListener('click', () => showSlide(+d.dataset.slide)));
+setInterval(() => showSlide((current + 1) % slides.length), 5000);
 </script>
 
 </body>
